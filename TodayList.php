@@ -44,7 +44,10 @@ if (isset($_GET['DeleteAnswer'])) {
     else PrintMessage("Failed Deleting Answer Of Question","Danger");
 }
 
-
+if(isset($_GET['DONEUPDATE']))
+{
+    PrintMessage("Done Updating","Normal");
+}
 //If user hasnt logged in this will force him to go to login page
 Authunticate();
 

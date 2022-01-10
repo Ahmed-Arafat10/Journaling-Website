@@ -2,6 +2,8 @@
 include("ConfigDB.php");
 
 
+$UserID = $_SESSION['UserID'];
+
 $WantedDateID = NULL;
 $WantedDate = NULL;
 if (isset($_POST['SearchBTN'])) {
@@ -15,7 +17,7 @@ if (isset($_POST['SearchBTN'])) {
         $FetchData = mysqli_fetch_assoc($ExecuteAboveQuery);
         $WantedDateID = $FetchData['ID'];
         $WantedDate = $FetchData['Date'];
-    } else PrintMessage("This Date Has No Information","Danger");
+    } else PrintMessage("This Date Has No Information", "Danger");
 }
 
 //Debug
@@ -82,7 +84,7 @@ Authunticate();
             $JoinQuery = "SELECT Note , DATE.Date AS DD ,Todo.ID AS Task_ID , Todo.Is_Done AS Done
             FROM `to-do-list` AS Todo 
             INNER JOIN `date` as DATE
-            ON Todo.Date_ID  = DATE.ID WHERE DATE.ID = '$WantedDateID' ORDER BY Done ASC ";
+            ON Todo.Date_ID  = DATE.ID WHERE DATE.ID = '$WantedDateID' AND Todo.User_ID = $UserID ORDER BY Done ASC ";
             $ExecuteAboveQuery = mysqli_query($DB, $JoinQuery);
             $FinshTaskOrNot = NULL;
             foreach ($ExecuteAboveQuery as $Task) {
@@ -101,7 +103,6 @@ Authunticate();
             <?php } ?>
         </table>
     </div>
-    <hr>
 
     <div class="Diary">
         <h1> Diary Of <b> <?php echo $WantedDate ?> </b> </h1>
@@ -117,7 +118,7 @@ Authunticate();
             $JoinQuery =
                 "SELECT da.Date AS DATE ,di.ID AS DiaryID , di.Diary  AS DIARY FROM `diary` AS di
                 INNER JOIN `date` as da ON di.Date_ID  = da.ID 
-                 WHERE da.ID = '$WantedDateID'";
+                 WHERE (da.ID = '$WantedDateID' AND di.User_ID = $UserID) ";
             $ExecuteAboveQuery = mysqli_query($DB, $JoinQuery);
             foreach ($ExecuteAboveQuery as $Diary) {
             ?>
@@ -146,8 +147,12 @@ Authunticate();
             </tr>
 
             <?php $JoinQuery = "SELECT ANSWER_TABLE.ID AS ANS_ID , ANSWER_TABLE.Answer AS ANS , DATE_TABLE.Date AS TODAY_DATE , QUESTION_TABLE.Question AS QUESTION
-                                 FROM `answer_of_questions` AS ANSWER_TABLE INNER JOIN `date` AS DATE_TABLE ON ANSWER_TABLE.Date_ID = DATE_TABLE.ID 
-                                INNER JOIN `predefined-questions` AS QUESTION_TABLE ON ANSWER_TABLE.QuestionID	= QUESTION_TABLE.ID WHERE DATE_TABLE.ID = '$WantedDateID' ";
+                                 FROM `answer_of_questions` AS ANSWER_TABLE
+                                  INNER JOIN `date` AS DATE_TABLE 
+                                 ON ANSWER_TABLE.Date_ID = DATE_TABLE.ID 
+                                INNER JOIN `predefined-questions` AS QUESTION_TABLE 
+                                ON ANSWER_TABLE.QuestionID = QUESTION_TABLE.ID
+                                 WHERE DATE_TABLE.ID = '$WantedDateID' AND ANSWER_TABLE.User_ID = $UserID  ";
             $ExecuteAboveQuery = mysqli_query($DB, $JoinQuery);
             foreach ($ExecuteAboveQuery as $AnswerOfQuestions) {
             ?>

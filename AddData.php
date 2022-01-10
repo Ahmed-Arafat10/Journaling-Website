@@ -120,9 +120,9 @@ Authunticate();
                 <?php if ($Question['ANSWER'] == NULL) : ?>
                     <form action="" method="POST">
                         <td> <label for="AnswerIN"> <?php echo $Question['QUESTION_COL'] ?> </label> </td>
-                        <td> <input placeholder="Enter Answer Here" class="form-control" type="text" name="AnswerIN"> </td>
+                        <td> <textarea placeholder="Enter Answer Here" class="form-control" type="text" name="AnswerIN"> </textarea> </td>
                         <input hidden type="text" name="QuestionID" value="<?php echo $Question['QUESTION_ID'] ?>">
-                        <td><button type="submit" name="AnswerBTN" class="btn btn-primary text-center col-md">Add Diary</button> </td>
+                        <td><button type="submit" name="AnswerBTN" class="btn btn-primary text-center col-md">Add Answer</button> </td>
                     
                     </form>
                 <?php endif ?>

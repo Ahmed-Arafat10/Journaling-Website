@@ -1,0 +1,8 @@
+1-   display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+2- flex-wrap: wrap;
+3- background-size:cover
+4- calc(100vh -  64px)
+5- :root{} in CSS
+6- flex basis
+7- scrolling-behavior:smooth

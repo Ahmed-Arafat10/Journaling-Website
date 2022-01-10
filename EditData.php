@@ -10,17 +10,20 @@ if (isset($_GET['EditTask'])) {
     $FetchData = mysqli_fetch_assoc($ExecuteAboveQuery);
     $Note = $FetchData['Note'];
 }
-if (isset($_POST['UpdateBTN'])) {
+
+if (isset($_POST['UpdateNoteBTN'])) {
     $ID = $_GET['EditTask'];
     $UpdatedNote = $_POST['UpdatedNote'];
     $UpdateQuery = "UPDATE `to-do-list` SET Note = '$UpdatedNote' WHERE ID = $ID";
     $ExecuteAboveQuery = mysqli_query($DB, $UpdateQuery);
+    header("location:TodayList.php?DONEUPDATE=1");
 }
 
 
 
-//For Updating Diary in `Diary` table
+
 $Diary = ""; // Store Diary Of `Diary` Column Of `Diary` Table
+//Fetch Diary from `Diary` Table To print value of it in Input Tag
 if (isset($_GET['EditDiary'])) {
     $ID = $_GET['EditDiary'];
     $SelectQuery = "SELECT * FROM `diary` WHERE ID = $ID";
@@ -28,15 +31,21 @@ if (isset($_GET['EditDiary'])) {
     $FetchData = mysqli_fetch_assoc($ExecuteAboveQuery);
     $Diary = $FetchData['Diary'];
 }
+
+
+//For Updating Diary in `Diary` table
 if (isset($_POST['UpdateDiaryBTN'])) {
     $ID = $_GET['EditDiary'];
     $UpdatedDiary = $_POST['UpdatedDiary'];
     $UpdateQuery = "UPDATE `diary` SET Diary = '$UpdatedDiary' WHERE ID = $ID";
     $ExecuteAboveQuery = mysqli_query($DB, $UpdateQuery);
+    header("location:TodayList.php?DONEUPDATE=1");
 }
-//-----------------------------------------------------------------------------
+
+
 $Question = "";
 $Answer = "";
+//Fetch Question & Answer from `answer_of_questions` Table To print value of it in Input Tag
 if (isset($_GET['EditAnswer'])) {
     $ID = $_GET['EditAnswer'];
     $SelectQuery = "SELECT * FROM `answer_of_questions` WHERE ID = $ID";
@@ -45,11 +54,14 @@ if (isset($_GET['EditAnswer'])) {
     $Answer = $FetchData['Answer'];
     $Question = $_GET['QUESTION'];
 }
+
+//For Updating Answers in `answer_of_questions` table
 if (isset($_POST['UpdateAnswerBTN'])) {
     $ID = $_GET['EditAnswer'];
     $UpdatedAnswer = $_POST['UpdateAnswer'];
     $UpdateQuery = "UPDATE `answer_of_questions` SET Answer = '$UpdatedAnswer' WHERE ID = $ID";
     $ExecuteAboveQuery = mysqli_query($DB, $UpdateQuery);
+    header("location:TodayList.php?DONEUPDATE=1");
 }
 
 
