@@ -26,3 +26,6 @@
 - What ideas came to your mind ?
 - What is your feeling along day ?
 > As I Said Each Day You Can Answer Each Question Only Once
+
+
+<img align="left" title="Facebook" alt="Facebook" width="35px" src="Journaling_Database_Schema.pdf" />
