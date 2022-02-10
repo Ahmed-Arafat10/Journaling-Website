@@ -28,4 +28,4 @@
 > As I Said Each Day You Can Answer Each Question Only Once
 
 
-<img align="left" title="Facebook" alt="Facebook" width="35px" src="Screenshot.png" />
+<img align="left" title="Facebook" alt="Facebook" width="100%" src="Screenshot.png" />
