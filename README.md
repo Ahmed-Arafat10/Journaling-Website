@@ -3,6 +3,7 @@
 ## Features:
 - Create An Account
 - Login With That Account
+- Authonticate User So, He,She Cannot Use Feature Of Website Unless They Have Logged In First
 - For Each Date [Ex: 10-2-2020] :
   - You can Add new data [Like Tasks to complete]
   - Write Your Diary
