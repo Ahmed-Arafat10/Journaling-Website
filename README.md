@@ -28,4 +28,4 @@
 > As I Said Each Day You Can Answer Each Question Only Once
 
 ## Database Schema:
-<img align="left" title="Facebook" alt="Facebook" width="100%" src="Screenshot.png" />
+<img align="center" title="DBSchema" alt="DBSchema" width="100%" src="DBSchema.png" />
