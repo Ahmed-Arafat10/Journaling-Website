@@ -3,7 +3,7 @@
 ## Features:
 - Create An Account
 - Login With That Account
-- For each Date [Ex: 10-2-2020] :
+- For Each Date [Ex: 10-2-2020] :
   - You can Add new data [Like Tasks to complete]
   - Write Diary
   - Answer Some Predefined Questions {Each Question is answered one time each day} 
@@ -13,9 +13,10 @@
   - You Can Edit/Delete Your Today's Diary
   - You Can Edit/Delete An Answer Of Predefined Question*
   - You Can Delete A Task 
-  - Add A Predefined Question For All Coming Days
+- Add A New Predefined Question For All Coming Days
+- A History Menu Where You can search by Date and then you will have all Written Tasks/Diary/Answer Of Predefined Questions of That Day
 
-* Predefined Questions For Each Day Like:
+*Predefined Questions Like:
 
 - What is the best thing today ?
 - What is worst thing today ?
