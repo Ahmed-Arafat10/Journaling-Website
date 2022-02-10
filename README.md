@@ -5,16 +5,15 @@
 - Login With That Account
 - For Each Date [Ex: 10-2-2020] :
   - You can Add new data [Like Tasks to complete]
-  - Write Diary
+  - Write Your Diary
   - Answer Some Predefined Questions {Each Question is answered one time each day} 
-  - View Tasks/Diary/Answer Of Questions of Today's Date
-  - You can Mark As Done/Undone Each Task
+  - View Tasks/Diary/Answer Of Questions Of Today's Date
+  - You Can Mark As Done/Undone Each Task
   - You Can Edit/Delete Your Today's Task(s)
   - You Can Edit/Delete Your Today's Diary
   - You Can Edit/Delete An Answer Of Predefined Question*
-  - You Can Delete A Task 
 - Add A New Predefined Question For All Coming Days
-- A History Menu Where You can search by Date and then you will have all Written Tasks/Diary/Answer Of Predefined Questions of That Day
+- A History Menu Where You Can Search By Date And Then You Will Have All Written Tasks/Diary/Answer Of Predefined Questions of That Day
 
 *Predefined Questions Like:
 
@@ -25,3 +24,4 @@
 - What is the thing you are regret about ?
 - What ideas came to your mind ?
 - What is your feeling along day ?
+> As I Said Each Day You Can Answer Each Question Only Once
