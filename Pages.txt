@@ -1,0 +1,26 @@
+- Add Page {Index Page}
+
+
+
+- History {Search a specific day}   :   - View all dates in `date` Table
+                                        - Search for date you want to show information of it
+                                        - show to-do-list / Diary / Answer of quaetions for that day + edit button  
+
+- Login : DONE
+
+
+
+
+
+
+
+
+- Edit Page :   - Edit `to do list` Table task
+                - Edit Diary 
+                - Edit Answer Of Predefined Question
+
+
+- Today's list Page : - View/Send to edit page/marke as done/marke as undone/delete Task for `to do list` Table
+                      - View/Send to edit page/delete Diary for `Diary` Table
+                      - View/Send to edit page/delete answer Of predefined Questions for `Answer` Table
+
