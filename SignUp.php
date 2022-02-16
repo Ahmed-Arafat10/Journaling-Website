@@ -1,6 +1,9 @@
 <?php
 include("ConfigDB.php");
-
+$Username = NULL;
+$Password = NULL;
+$ConfirmPassword = NULL;
+$Email = NULL;
 //When User Click On Sign Up Button, will save Data In Database 
 if (isset($_POST['SignUpBTN'])) {
     $Username = mysqli_real_escape_string($DB, $_POST['Username']);
@@ -48,23 +51,23 @@ if (isset($_POST['SignUpBTN'])) {
             <div class="row">
                 <div class="col">
                     <label for="inputEmail4">Username</label>
-                    <input type="text" name="Username" class="form-control" placeholder="Please Enter Your Name">
+                    <input type="text" value="<?php echo $Username ?>" name="Username" class="form-control" placeholder="Please Enter Your Name">
                 </div>
             </div>
             <div class="row">
                 <div class="col ">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" name="Email" class="form-control" placeholder="Please Confirm Your Email">
+                    <input type="email" value="<?php echo $Email ?>" name="Email" class="form-control" placeholder="Please Confirm Your Email">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="inputEmail4">Password</label>
-                    <input type="password" name="Password" class="form-control" placeholder="Please Enter Your Password">
+                    <input type="password" value="<?php echo $Password ?>" name="Password" class="form-control" placeholder="Please Enter Your Password">
                 </div>
                 <div class="col">
                     <label for="inputEmail4">Confirm Password</label>
-                    <input type="password" name="ConfirmPassword" class="form-control" placeholder="Please Confirm Password">
+                    <input type="password" value="<?php echo $ConfirmPassword ?>" name="ConfirmPassword" class="form-control" placeholder="Please Confirm Password">
                 </div>
             </div>
             <button type="submit" name="SignUpBTN" class="btn btn-outline-primary text-center col-md">Sign In</button>

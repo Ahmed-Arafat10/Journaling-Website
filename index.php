@@ -46,7 +46,7 @@ if (isset($_GET['LogOut'])) {
 }
 
 
-//After user login in login page and redirected to this page this will print welcome alert
+//After User Login In Login Page And Redirected To This Page This Will Print Welcome Alert
 if (isset($_GET['DoneLogIn'])) {
 
     PrintMessage("Welcome Back, $UserName", "Normal");

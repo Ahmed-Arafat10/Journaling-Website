@@ -30,11 +30,14 @@ if (isset($_POST['QuestionsBTN'])) {
     <div style="margin-top: 50px;" class="row justify-content-center align-items-center h-100">
         <div class="container">
             <div class="Predefined-Questions">
-                <h1>Questions</h1>
+                <h1 style="font-style: italic;">Questions</h1>
                 <form action="" method="POST">
-                    <label for="QuestionsIN"> Note :</label>
-                    <input class="form-control" type="text" name="QuestionsIN" id="" placeholder="Enter New Question">
-                    <button type="submit" name="QuestionsBTN" class="btn btn-outline-primary text-center">Add Question</button>
+                    <label style="font-weight: bold;"  for="QuestionsIN"> Note :</label>
+                    <input style="font-weight: bold;" class="form-control" type="text" name="QuestionsIN" id="" placeholder="Enter New Question">
+                    <div class="row justify-content-center align-items-center">
+                        <button style="margin-top: 15px;" type="submit" name="QuestionsBTN" class="btn btn-outline-primary text-center">Add Question</button>
+                    </div>
+
                 </form>
             </div>
         </div>

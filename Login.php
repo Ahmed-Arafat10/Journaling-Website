@@ -8,7 +8,7 @@ include("ConfigDB.php");
 if (isset($_POST['LogInBTN'])) {
     $UserName = $_POST['Username'];
     $Password = $_POST['Password'];
-    $Check = "SELECT * FROM `user` WHERE Name = '$UserName' AND Password = '$Password' ";
+    $Check = "SELECT * FROM `user` WHERE (Name = '$UserName' OR Email = '$UserName') AND Password = '$Password' ";
     $ExecuteAboveStatement  = mysqli_query($DB, $Check);
     $NumOfRows = mysqli_num_rows($ExecuteAboveStatement);
     if ($NumOfRows == 1) {
@@ -21,7 +21,7 @@ if (isset($_POST['LogInBTN'])) {
 
 
 
-// When user sign up for first time and after redircting from sigup page to login page (This Page), an alert will be shown
+// When User Sign Up For First Time And After Redircting From Sigup Page To Login Page (this Page), an Alert Will Be Shown
 if (isset($_GET['DoneRegist'])) {
     PrintMessage("Done Creating Account", "Normal");
 }
@@ -53,15 +53,15 @@ if (isset($_GET['DoneRegist'])) {
                     <label for="email">Username</label>
                     <div class="sec-2">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input required type="text" name="Username" placeholder="Example: Ahmed Arafat" />
+                        <input required type="text" name="Username" placeholder="EX: Ahmed" />
                     </div>
                 </div>
                 <div class="password">
                     <label for="password">Password</label>
                     <div class="sec-2">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input required class="pas" type="password" name="Password" placeholder="············" />
-                        <ion-icon class="show-hide" name="eye-outline"></ion-icon>
+                        <input required class="pas" type="password" name="Password" placeholder="·········" />
+                        <!-- <ion-icon class="show-hide" name="eye-outline"></ion-icon> -->
                     </div>
                 </div>
                 <button type="submit" Name="LogInBTN" class="login">Login</button>

@@ -42,20 +42,54 @@ Authunticate();
 
     <div class="History-Date container">
 
-        <h3>Date That Have Avaialable Information</h3>
-        <div class="row justify-content-center align-items-center h-100">
-            <!-- <label  for="">Date: </label> -->
-            <select class="form-control col-md" name="" id="">
-                <?php
-                $JoinQuery = "SELECT * FROM `date`";
-                $ExecuteAboveQuery = mysqli_query($DB, $JoinQuery);
+        <h3 style="font-style: italic;margin:15px auto">Date That Have Avaialable Information</h3>
+        <div class="col justify-content-center align-items-center h-100">
+            <label style="font-weight: bold;" for="">Date: </label>
+        
+            <?php
+            $AvairableDates = array();
+            $Query = "SELECT date.ID AS DATE__ID, date.Date AS DATE__Date from date
+                INNER JOIN `to-do-list`
+                ON `to-do-list`.Date_ID = date.ID AND `to-do-list`.`User_ID` = $UserID";
+            $ExecuteAboveQuery = mysqli_query($DB, $Query);
+            // if($ExecuteAboveQuery) echo "YESSSS";
+            $NUM = mysqli_num_rows($ExecuteAboveQuery);
+            if ($NUM != 0) {
                 foreach ($ExecuteAboveQuery as $DATE) {
+                    $AvairableDates[$DATE['DATE__ID']] = $DATE['DATE__Date'];
+                }
+            }
+
+            $Query = "SELECT date.ID AS DATE__ID, date.Date AS DATE__Date 
+                FROM date INNER JOIN answer_of_questions 
+                ON answer_of_questions.Date_ID = date.ID AND answer_of_questions.User_ID = $UserID";
+
+            $ExecuteAboveQuery = mysqli_query($DB, $Query);
+            // if($ExecuteAboveQuery) echo "YESSSS";
+            $NUM = mysqli_num_rows($ExecuteAboveQuery);
+            if ($NUM != 0) {
+                foreach ($ExecuteAboveQuery as $DATE) {
+                    $AvairableDates[$DATE['DATE__ID']] = $DATE['DATE__Date'];
+                }
+            }
+            $Query = "SELECT date.ID AS DATE__ID, date.Date AS DATE__Date from date 
+                         INNER JOIN diary
+                         ON diary.Date_ID = date.ID AND diary.User_ID = $UserID";
+            $ExecuteAboveQuery = mysqli_query($DB, $Query);
+            $NUM = mysqli_num_rows($ExecuteAboveQuery);
+            if ($NUM != 0) {
+                foreach ($ExecuteAboveQuery as $DATE) {
+                    $AvairableDates[$DATE['DATE__ID']] = $DATE['DATE__Date'];
+                }
+            }
+            ?>
+            <select class="form-control col-md" name="" id="">
+                <?php foreach ($AvairableDates as $DATE) :
                 ?>
                     <option value="">
-                        <!-- <td> <?php echo  $DATE['ID'] ?> </td> -->
-                        <td> <?php echo  $DATE['Date'] ?> </td>
+                        <td> <?php echo $DATE ?> </td>
                     </option>
-                <?php } ?>
+                <?php endforeach; ?>
             </select>
         </div>
     </div>
@@ -65,7 +99,7 @@ Authunticate();
         <form action="" method="POST">
             <!-- <label for="">Date:</label> -->
             <input class="form-control" required type="date" name="WantedDate" id="">
-            <button type="submit" name="SearchBTN" class="btn btn-outline-primary text-center col-md">Search</button>
+            <button style="margin:15px auto" type="submit" name="SearchBTN" class="btn btn-outline-primary text-center col-md">Search</button>
         </form>
     </div>
     <!-- Search Form -->

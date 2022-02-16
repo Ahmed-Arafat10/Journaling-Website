@@ -66,7 +66,7 @@ Authunticate();
 <body>
 
     <div class="To-Do-List">
-        <h1>To-Do-List of <b> <?php echo $TodayDate ?> </b> </h1>
+        <h3 style="margin:15px auto">To-Do-List of <b style="color:cadetblue;"> <?php echo $TodayDate ?> </b> </h3>
         <table class="table table-dark container">
             <tr>
                 <!-- <th>Date</th> -->
@@ -108,7 +108,7 @@ Authunticate();
     <hr>
 
     <div class="Diary">
-        <h1> Diary Of <b> <?php echo $TodayDate ?> </b> </h1>
+        <h3> Diary Of <b style="color:cadetblue;"> <?php echo $TodayDate ?> </b> </h3>
         <table class="table table-dark container">
             <tr>
                 <!-- <th>Date</th> -->
@@ -136,7 +136,7 @@ Authunticate();
 
 
     <div class="AnswerOfPredefinedQuestions">
-        <h1>Answer Of Predefined Questions Of <b> <?php echo $TodayDate ?> </b></h1>
+        <h3>Answer Of Predefined Questions Of <b style="color:cadetblue;"> <?php echo $TodayDate ?> </b></h3>
         <table class="table table-dark container">
             <tr>
                 <!-- <td>Date</td> -->

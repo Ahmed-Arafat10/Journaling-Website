@@ -11,16 +11,21 @@ if ($DB) echo PrintMessage("Done Connecting To DB", "Normal");
 else echo PrintMessage("FAILED Connecting To DB", "Danger");
 */
 
-// Store vlaue of today's date with this format (2022-1-9) in this variable
+// Set Time Zone To Cairo
+date_default_timezone_set('Africa/Cairo');
+
+// Store Vlaue Of Today'S Date With This Format (2022-1-9) In This Variable
 $TodayDate =  date("Y-m-d");
 
+#Debug
+//echo $TodayDate;
 //If User didnt logged in yet this function will force him to go to login page , so he wont be able to access any page unless he logged in
 function Authunticate()
 {
     if (!isset($_SESSION['User'])) header('location:Login.php');
 }
 
-// Create global array $_Session
+// Create Global Array $_Session
 session_start();
 
 
@@ -76,7 +81,7 @@ function PrintMessage($text, $Type)
                         <a class="nav-link" href="Login.php">Login</a>
                     </li>
                 <?php else : ?>
-                    <li class="nav-item">
+                    <li style="width:50px;" class="nav-item">
                         <a id="Logout" class="nav-link" href="index.php?LogOut=1">Logout</a>
                     </li>
                 <?php endif ?>
