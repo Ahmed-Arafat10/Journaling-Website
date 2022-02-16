@@ -81,7 +81,7 @@ function PrintMessage($text, $Type)
                         <a class="nav-link" href="Login.php">Login</a>
                     </li>
                 <?php else : ?>
-                    <li style="width:25%;" class="nav-item">
+                    <li style="width:15%;" class="nav-item">
                         <a id="Logout" class="nav-link" href="index.php?LogOut=1">Logout</a>
                     </li>
                 <?php endif ?>
