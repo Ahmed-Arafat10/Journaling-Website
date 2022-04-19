@@ -17,7 +17,7 @@ if (isset($_POST['To-Do-ListBTN'])) {
 
 // Insert Into `Diary` Table New Diary For Today's Date
 if (isset($_POST['DiaryBTN'])) {
-    $Diary = $_POST['DiaryIN'];
+    $Diary = nl2br($_POST['DiaryIN']);
     $InsertQueryDiaryT = " INSERT INTO `diary` VALUES (NULL,$Day_ID,'$Diary',$User_ID)";
     $ExceuteAboveQuery = mysqli_query($DB, $InsertQueryDiaryT);
     if ($ExceuteAboveQuery) PrintMessage("Done Adding Today's Diary", "Normal");
