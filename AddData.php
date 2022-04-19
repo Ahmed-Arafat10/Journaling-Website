@@ -49,6 +49,12 @@ Authunticate();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input,
+        textarea {
+            unicode-bidi: plaintext;
+        }
+    </style>
 </head>
 
 <body>
@@ -65,7 +71,7 @@ Authunticate();
                 <div class="row-6">
                     <div class="col">
                         <label style="font-weight: bold;" for="NoteIN"> Note :</label>
-                        <input class="form-control " type="text" name="NoteIN" id="NoteIN" placeholder="Enter Task Here">
+                        <input id="AddData" class="form-control " type="text" name="NoteIN" id="NoteIN" placeholder="Enter Task Here">
                     </div>
                 </div>
                 <div class="col">

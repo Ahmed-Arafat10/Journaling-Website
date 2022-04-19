@@ -2,6 +2,9 @@
 include("ConfigDB.php");
 
 
+//If user hasnt logged in this will force him to go to login page
+Authunticate();
+
 $UserID = $_SESSION['UserID'];
 
 $WantedDateID = NULL;
@@ -23,8 +26,7 @@ if (isset($_POST['SearchBTN'])) {
 //Debug
 // echo $WantedDateID;
 
-//If user hasnt logged in this will force him to go to login page
-Authunticate();
+
 
 ?>
 
@@ -45,7 +47,7 @@ Authunticate();
         <h3 style="font-style: italic;margin:15px auto">Date That Have Avaialable Information</h3>
         <div class="col justify-content-center align-items-center h-100">
             <label style="font-weight: bold;" for="">Date: </label>
-        
+
             <?php
             $AvairableDates = array();
             $Query = "SELECT date.ID AS DATE__ID, date.Date AS DATE__Date from date

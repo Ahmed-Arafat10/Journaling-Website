@@ -29,7 +29,7 @@ $_SESSION['Day_ID'] =  $Day_ID;
 
 
 //Store Name and ID of logged in user in this two variables
-$UserName = $_SESSION['User'];
+if(isset($_SESSION['User'])) $UserName = $_SESSION['User'];
 $UserID = $_SESSION['UserID'];
 
 
@@ -42,6 +42,7 @@ Authunticate();
 if (isset($_GET['LogOut'])) {
     session_unset();
     session_destroy();
+    setcookie("RememberMe","",time() - 3600);
     header('location:index.php');
 }
 
@@ -50,6 +51,7 @@ if (isset($_GET['LogOut'])) {
 if (isset($_GET['DoneLogIn'])) {
 
     PrintMessage("Welcome Back, $UserName", "Normal");
+    //echo $_COOKIE['RememberMe'];
 }
 
 ?>

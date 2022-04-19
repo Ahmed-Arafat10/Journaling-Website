@@ -78,6 +78,11 @@ Authunticate();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        textarea{
+            unicode-bidi:plaintext;
+        }
+    </style>
 </head>
 
 <body>
@@ -86,8 +91,10 @@ Authunticate();
 
 <div style="margin-top: 50px;" class="row justify-content-center align-items-center h-100">
     <form action="" method="POST">
-        <?php if (isset($_GET['EditTask'])) : ?>
-            <input class="form-control" type="text" name="UpdatedNote" value="<?php echo $Note ?>">
+        <?php if (isset($_GET['EditTask'])) :
+             
+            ?>
+            <textarea class="form-control" type="text" name="UpdatedNote"><?php echo $Note?></textarea>
             <button type="submit" name="UpdateNoteBTN" class="btn btn-outline-primary text-center col-md">Update</button>
         <?php endif ?>
 
