@@ -1,6 +1,9 @@
 <?php
 include("ConfigDB.php");
 
+//If user hasnt logged in this will force him to go to login page
+Authunticate();
+
 $UserID = $_SESSION['UserID'];
 
 // Delete A Task in `to-do-list` table
@@ -48,8 +51,7 @@ if(isset($_GET['DONEUPDATE']))
 {
     PrintMessage("Done Updating","Normal");
 }
-//If user hasnt logged in this will force him to go to login page
-Authunticate();
+
 
 ?>
 

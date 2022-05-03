@@ -23,19 +23,43 @@ $TodayDate =  date("Y-m-d");
 function Authunticate()
 {
     if (!isset($_SESSION['UserID']) && !isset($_COOKIE['RememberMe'])) {
-    
+
         header('location:Login.php');
         exit;
     }
-    if(isset($_COOKIE['RememberMe'])) $_SESSION['UserID'] = $_COOKIE['RememberMe'];
+    if (isset($_COOKIE['RememberMe'])) $_SESSION['UserID'] = $_COOKIE['RememberMe'];
 }
 
 function IsUserLoggedIn()
 {
     if (isset($_SESSION['UserID']) || isset($_COOKIE['RememberMe'])) {
-        if(isset($_COOKIE['RememberMe'])) $_SESSION['UserID'] = $_COOKIE['RememberMe'];
+        if (isset($_COOKIE['RememberMe'])) $_SESSION['UserID'] = $_COOKIE['RememberMe'];
         header('location:index.php');
     }
+}
+
+function AddDateID($TodayDate, $DB)
+{
+    //Initialize with NULL value
+    $Day_ID = NULL;
+    //Check if todat's date already exist in `Date` Table 
+    $SelectQueryFromDateT = "SELECT * FROM `date` WHERE Date = '$TodayDate' ";
+    $ExceuteSelectQuery = mysqli_query($DB, $SelectQueryFromDateT);
+    $NumOfRows = mysqli_num_rows($ExceuteSelectQuery);
+    //If todat's date does not exist in `Date` Table, THEN insert it in Table 
+    if (!$NumOfRows) {
+        $InsertQueryToDateT = "INSERT INTO `Date` VALUES(NULL,'$TodayDate')";
+        $ExceuteInsertQuery = mysqli_query($DB, $InsertQueryToDateT);
+    }
+
+    // SELECT Today's Date row to be able to store it's ID in $Day_ID variable after fetching row
+    $SelectQueryFromDateT = "SELECT * FROM `date` WHERE Date = '$TodayDate' ";
+    $ExceuteSelectQuery = mysqli_query($DB, $SelectQueryFromDateT);
+    $FetchData = mysqli_fetch_assoc($ExceuteSelectQuery);
+    $Day_ID = $FetchData['ID'];
+
+    //VIP: To Make Today's Date ID Global amoung ALL Pages
+    $_SESSION['Day_ID'] = $Day_ID;
 }
 
 // Create Global Array $_Session
@@ -66,7 +90,7 @@ function PrintMessage($text, $Type)
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     <script src="index.js"></script>
-    
+
 </head>
 
 <body>

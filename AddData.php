@@ -1,6 +1,8 @@
 <?php
 include("ConfigDB.php");
-
+AddDateID($TodayDate, $DB);
+//If user hasnt logged in this will force him to go to login page
+Authunticate();
 //Store Today's Date in $Day_ID Variable
 $Day_ID = $_SESSION['Day_ID'];
 $User_ID = $_SESSION['UserID'];
@@ -36,8 +38,7 @@ if (isset($_POST['AnswerBTN'])) {
 }
 
 
-//If user hasnt logged in this will force him to go to login page
-Authunticate();
+
 
 ?>
 
