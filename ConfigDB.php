@@ -15,7 +15,7 @@ else echo PrintMessage("FAILED Connecting To DB", "Danger");
 date_default_timezone_set('Africa/Cairo');
 
 // Store Vlaue Of Today'S Date With This Format (2022-1-9) In This Variable
-$TodayDate =  date("Y-m-d");
+$TodayDate = date("Y-m-d");
 
 #Debug
 //echo $TodayDate;
@@ -83,51 +83,54 @@ function PrintMessage($text, $Type)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/index.css?v=<?php echo time(); ?>">
+<!--    <link rel="stylesheet" href="assets/css/index.css?v=--><?php //echo time(); ?><!--">-->
+
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
 
 </head>
 
 <body>
-    <!-- Nav Bar Start That will be Shared in All Pages thats why it is in this page as this page is inluded in all pages to connect to Databse-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.php"><span style="color:salmon;">J</span>ournaling</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+<!-- Nav Bar Start That will be Shared in All Pages thats why it is in this page as this page is inluded in all pages to connect to Databse-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.php"><span style="color:salmon;">J</span>ournaling</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
 
+            <li class="nav-item">
+                <a class="nav-link" href="TodayList.php">Today's List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="AddData.php">Add Data</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="History.php">History</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="AddQuestions.php">Add Questions</a>
+            </li>
+            <?php if (!isset($_SESSION['UserID'])) : ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="TodayList.php">Today's List</a>
+                    <a class="nav-link" href="Login.php">Login</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="AddData.php">Add Data</a>
+            <?php else : ?>
+                <li style="width:15%;" class="nav-item">
+                    <a id="Logout" class="nav-link" href="index.php?LogOut=1">Logout</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="History.php">History</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="AddQuestions.php">Add Questions</a>
-                </li>
-                <?php if (!isset($_SESSION['UserID'])) : ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Login.php">Login</a>
-                    </li>
-                <?php else : ?>
-                    <li style="width:15%;" class="nav-item">
-                        <a id="Logout" class="nav-link" href="index.php?LogOut=1">Logout</a>
-                    </li>
-                <?php endif ?>
-            </ul>
-        </div>
-    </nav>
-    <!-- Nav Bar End-->
+            <?php endif ?>
+        </ul>
+    </div>
+</nav>
+<!-- Nav Bar End-->
+
+<!-- Core -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
