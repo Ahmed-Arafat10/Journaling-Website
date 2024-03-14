@@ -132,7 +132,7 @@ if (isset($_POST['SearchBTN'])) {
                     <?php else : ?>
                         <td> <?php echo  $Task['Note'] ?></td>
                     <?php endif ?>
-                    <td> <a href="EditData.php?EditTask=<?php echo $Task['Task_ID'] ?>"> <button class="btn btn-warning text-center">Edit</button> </a> </td>
+                    <td> <a href="EditDataXXX.php?EditTask=<?php echo $Task['Task_ID'] ?>"> <button class="btn btn-warning text-center">Edit</button> </a> </td>
                     <!-- <td> <a href="TodayList.php?DeleteTask=<?php echo  $Task['Task_ID'] ?>"> <button>Delete</button></a> </td> -->
                     <td></td>
                 </tr>
@@ -161,7 +161,7 @@ if (isset($_POST['SearchBTN'])) {
                 <tr>
                     <!-- <td> <?php echo  $Diary['DATE'] ?> </td> -->
                     <td> <?php echo  $Diary['DIARY'] ?> </td>
-                    <td> <a href="EditData.php?EditDiary=<?php echo $Diary['DiaryID'] ?>"> <button class="btn btn-warning text-center">Edit</button> </a> </td>
+                    <td> <a href="EditDataXXX.php?EditDiary=<?php echo $Diary['DiaryID'] ?>"> <button class="btn btn-warning text-center">Edit</button> </a> </td>
                     <!-- <td> <a href="TodayList.php?DeleteDiary=<?php echo $Diary['DiaryID'] ?>"> <button>Delete</button> </a> </td> -->
                     <td></td>
                 </tr>
@@ -196,7 +196,7 @@ if (isset($_POST['SearchBTN'])) {
 
                     <td> <?php echo  $AnswerOfQuestions['QUESTION'] ?> </td>
                     <td> <?php echo  $AnswerOfQuestions['ANS'] ?> </td>
-                    <td> <a href="EditData.php?EditAnswer=<?php echo $AnswerOfQuestions['ANS_ID'] ?>&QUESTION=<?php echo $AnswerOfQuestions['QUESTION']; ?>"><button class="btn btn-warning text-center">Edit</button> </a> </td>
+                    <td> <a href="EditDataXXX.php?EditAnswer=<?php echo $AnswerOfQuestions['ANS_ID'] ?>&QUESTION=<?php echo $AnswerOfQuestions['QUESTION']; ?>"><button class="btn btn-warning text-center">Edit</button> </a> </td>
                     <!-- <td> <a href="TodayList.php?DeleteAnswer=<?php echo $AnswerOfQuestions['ANS_ID']; ?>"> <button>Delete</button> </a> </td> -->
                 </tr>
 

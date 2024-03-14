@@ -106,19 +106,19 @@ if (isset($_GET['DONEUPDATE'])) {
                 <?php endif ?>
                 <?php if ($Task['Done'] == '1') : ?>
                     <td>
-                        <a href="TodayList.php?MarkAsCompleteTask=<?php echo $Task['Task_ID'] ?>&TEST=<?php echo $FinshTaskOrNot ?>">
+                        <a href="TodayListXXX.php?MarkAsCompleteTask=<?php echo $Task['Task_ID'] ?>&TEST=<?php echo $FinshTaskOrNot ?>">
                             <button class="btn btn-info text-center">Undone</button>
                         </a></td>
                 <?php else : ?>
                     <td>
-                        <a href="TodayList.php?MarkAsCompleteTask=<?php echo $Task['Task_ID'] ?>&TEST=<?php echo $FinshTaskOrNot ?>">
+                        <a href="TodayListXXX.php?MarkAsCompleteTask=<?php echo $Task['Task_ID'] ?>&TEST=<?php echo $FinshTaskOrNot ?>">
                             <button class="btn btn-primary text-center">Done</button>
                         </a></td>
                 <?php endif ?>
-                <td><a href="EditData.php?EditTask=<?php echo $Task['Task_ID'] ?>">
+                <td><a href="EditDataXXX.php?EditTask=<?php echo $Task['Task_ID'] ?>">
                         <button class="btn btn-warning text-center">Edit</button>
                     </a></td>
-                <td><a href="TodayList.php?DeleteTask=<?php echo $Task['Task_ID'] ?>">
+                <td><a href="TodayListXXX.php?DeleteTask=<?php echo $Task['Task_ID'] ?>">
                         <button class="btn btn-danger text-center">Delete</button>
                     </a></td>
             </tr>
@@ -146,10 +146,10 @@ if (isset($_GET['DONEUPDATE'])) {
             <tr>
                 <!-- <td> <?php echo $Diary['DATE'] ?> </td> -->
                 <td> <?php echo $Diary['DIARY'] ?> </td>
-                <td><a href="EditData.php?EditDiary=<?php echo $Diary['DiaryID'] ?>">
+                <td><a href="EditDataXXX.php?EditDiary=<?php echo $Diary['DiaryID'] ?>">
                         <button class="btn btn-warning text-center">Edit</button>
                     </a></td>
-                <td><a href="TodayList.php?DeleteDiary=<?php echo $Diary['DiaryID'] ?>">
+                <td><a href="TodayListXXX.php?DeleteDiary=<?php echo $Diary['DiaryID'] ?>">
                         <button class="btn btn-danger text-center">Delete</button>
                     </a></td>
             </tr>
@@ -183,10 +183,10 @@ if (isset($_GET['DONEUPDATE'])) {
                 <td> <?php echo $AnswerOfQuestions['QUESTION'] ?> </td>
                 <td> <?php echo $AnswerOfQuestions['ANS'] ?> </td>
                 <td>
-                    <a href="EditData.php?EditAnswer=<?php echo $AnswerOfQuestions['ANS_ID'] ?>&QUESTION=<?php echo $AnswerOfQuestions['QUESTION']; ?>">
+                    <a href="EditDataXXX.php?EditAnswer=<?php echo $AnswerOfQuestions['ANS_ID'] ?>&QUESTION=<?php echo $AnswerOfQuestions['QUESTION']; ?>">
                         <button class="btn btn-warning text-center">Edit</button>
                     </a></td>
-                <td><a href="TodayList.php?DeleteAnswer=<?php echo $AnswerOfQuestions['ANS_ID']; ?>">
+                <td><a href="TodayListXXX.php?DeleteAnswer=<?php echo $AnswerOfQuestions['ANS_ID']; ?>">
                         <button class="btn btn-danger text-center">Delete</button>
                     </a></td>
             </tr>
