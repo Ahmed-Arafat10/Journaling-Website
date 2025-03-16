@@ -1,3 +1,16 @@
+<?php
+
+# relative path
+require_once('../class/DB.php'); # import
+
+$name = "Ahmed Arafat";
+//echo $name;
+//echo "<h1>$name</h1>";
+
+$myObj = new \App\DB();
+//$myObj->checkConnection();
+//$myObj->Connection->query("SELECT * FROM `users`");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,6 +21,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello BIS</h1>
+<h1>Welcome Back, <?php echo $name ?></h1>
 </body>
 </html>
