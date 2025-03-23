@@ -1,7 +1,8 @@
 <?php
 
 # relative path
-require_once('../class/DB.php'); # import
+require_once('../vendor/autoload.php'); # import
+
 
 $name = "Ahmed Arafat";
 //echo $name;
@@ -12,7 +13,6 @@ $myObj = new \App\DB();
 //$myObj->Connection->query("SELECT * FROM `users`");
 
 
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,7 +21,7 @@ $myObj = new \App\DB();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="\viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
-    <link rel="stylesheet" href="../assets/css/index.css?v=<?php  echo time() ?>">
+    <link rel="stylesheet" href="../assets/css/index.css?v=<?php echo time() ?>">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -30,6 +30,7 @@ $myObj = new \App\DB();
     <title>Home Page</title>
 </head>
 <body>
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/IA/pages/Layout/Navbar.php' ?>
 <h1>Welcome Back, <?php echo $name ?></h1>
 </body>
 </html>
