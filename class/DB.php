@@ -3,7 +3,8 @@
 namespace App;
 
 use mysqli;
-
+// Client User DB   SQL SERVER
+//             DB     MYSQL
 class DB
 {
     private string $hostname = "localhost";

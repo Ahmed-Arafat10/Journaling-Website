@@ -1,0 +1,11 @@
+### Section 5:
+- method attribute in `<form>` tag (`POST` or `GET`)
+- `POST` Vs `GET`
+- `isset()` function
+- `$_POST` Super global arrays
+- `Alert.php` class & `PrintMessage()` method
+- How to insert a new record in DB
+    - Raw SQL insert statement
+    - `prepare()`
+    - `bind_param()`
+    - `execute()`
