@@ -1,0 +1,20 @@
+### Section 4:
+- autoloading all classes in `class` folder,create `composer.json` file, then `composer install`, then `require('../vendor/autoload.php')`
+- arrays in php (numeric and associative)
+- Super global arrays like: `$_SERVER`
+- `$_SERVER['DOCUMENT_ROOT']`
+- Absolute Path
+- `Navbar.php` file
+- recap of `<form>` & `<input>` tags
+- name attribute in `<input>` tags
+- method attribute in `<form>` tag (`POST` or `GET`)
+- `POST` Vs `GET`
+- `isset()` function
+- `var_dump()` function
+- `$_POST` Super global arrays
+- `Alert.php` class & `PrintMessage()` method
+- How to insert a new record in DB
+    - Raw SQL insert statement
+    - `prepare()`
+    - `bind_param()`
+    - `execute()`
