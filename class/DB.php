@@ -3,8 +3,12 @@
 namespace App;
 
 use mysqli;
-// Client User DB   SQL SERVER
-//             DB     MYSQL
+//  \SqlServer\DB ->  SQL SERVER
+//  \MySql\DB ->    MYSQL
+//  \MongoDB\DB ->    MongoDB
+
+// User
+// Client
 class DB
 {
     private string $hostname = "localhost";

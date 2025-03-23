@@ -13,12 +13,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Add Task</a>
             </li>
-            <!--            <li class="nav-item ">-->
-            <!--                <a class="nav-link" href="History.php">History</a>-->
-            <!--            </li>-->
-            <!--            <li class="nav-item ">-->
-            <!--                <a class="nav-link" href="AddQuestions.php">Add Questions</a>-->
-            <!--            </li>-->
         </ul>
     </div>
 </nav>
