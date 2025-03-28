@@ -1,5 +1,6 @@
 ### Section 4:
 - autoloading all classes in `class` folder,create `composer.json` file, then `composer install`, then `require('../vendor/autoload.php')`
+- namespace in php
 - arrays in php (numeric and associative)
 - Super global arrays like: `$_SERVER`
 - `$_SERVER['DOCUMENT_ROOT']`
