@@ -1,3 +1,11 @@
+<?php
+
+use App\Authenticate;
+require_once("../vendor/autoload.php");
+$authObj = new Authenticate();
+$authObj->signUp();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +27,7 @@
 
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/IA/pages/Layout/Navbar.php') ?>
 
-<form>
+<form method="post">
     <div class="Login-Card">
         <div class="screen-1">
 
@@ -27,7 +35,7 @@
                 <label for="username">Username</label>
                 <div class="sec-2">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input id="username" type="text" name="username" placeholder="Ahmed Arafat"/>
+                    <input id="username" required type="text" name="username" placeholder="Ahmed Arafat"/>
                 </div>
             </div>
 
@@ -35,7 +43,7 @@
                 <label for="email">Email</label>
                 <div class="sec-2">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input type="email" name="email" placeholder="ahmed@gmail.com"/>
+                    <input type="email" required name="email" placeholder="ahmed@gmail.com"/>
                 </div>
             </div>
 
@@ -43,7 +51,7 @@
                 <label for="password">Password</label>
                 <div class="sec-2">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input class="pas" type="password" name="password"/>
+                    <input class="pas" required type="password" name="password"/>
                 </div>
             </div>
 
@@ -51,11 +59,11 @@
                 <label for="password">Confirm Password</label>
                 <div class="sec-2">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input class="pas" type="password" name="confirm_password"/>
+                    <input class="pas" required type="password" name="confirm_password"/>
                 </div>
             </div>
 
-            <button type="submit" name="signUpBtn" value="123" class="login">Sign Up</button>
+            <button type="submit" name="signUpBtn" class="login">Sign Up</button>
 
             <div class="footer">
                 <a href="">
