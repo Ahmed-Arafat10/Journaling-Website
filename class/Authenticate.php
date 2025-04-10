@@ -25,7 +25,7 @@ class Authenticate
                 $queryObj->bind_param('sss', $username, $email, $hashedPassword);
                 $queryStatus = $queryObj->execute();
                 if ($queryStatus)
-                    Alert::PrintMessage("Done creating your account", 'Success');
+                    header('location: SignIn.php?doneSignUp=1');
                 else
                     Alert::PrintMessage("Failed to create your account", 'Danger');
             }
