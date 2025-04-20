@@ -4,7 +4,26 @@ namespace App;
 
 class Authenticate
 {
-    public function signUp(){
+    public function isAuth()
+    {
+        return isset($_SESSION['userID']); // bool
+    }
+
+    public function redirectIfNotAuth()
+    {
+        if (!$this->isAuth())
+            header('location: SignIn.php');
+    }
+
+    public function redirectIfAuth()
+    {
+        // Used in page SignIn & SignUp
+        if ($this->isAuth())
+            header('location: index.php');
+    }
+
+    public function signUp()
+    {
         // signUpBtn => ''
         // alert
         // Validation
@@ -55,10 +74,12 @@ class Authenticate
                 if ($resultObject->num_rows == 1) {
                     $rowArr = $resultObject->fetch_assoc();
                     //var_dump($rowArr);
-                    if(password_verify($password, $rowArr["password"])) {
+                    if (password_verify($password, $rowArr["password"])) {
                         // Authenticated
+                        $_SESSION['userID'] = $rowArr["id"]; // userID => X
+                        $_SESSION['userName'] = $rowArr["name"];
                         Alert::PrintMessage("Welcome Back, " . $rowArr['name'], 'Normal');
-                    }else{
+                    } else {
                         Alert::PrintMessage('Wrong password', 'Danger');
                     }
                 } else {
@@ -66,6 +87,14 @@ class Authenticate
                 }
             }
         }
+    }
 
+    public function logOut()
+    {
+        if (isset($_GET['logout'])) {
+            session_unset();
+            session_destroy();
+            header("location: SignIn.php");
+        }
     }
 }

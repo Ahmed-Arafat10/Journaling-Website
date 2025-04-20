@@ -10,7 +10,10 @@ $alertObject->alertAfterSignUp();
 
 
 $authObject = new \App\Authenticate();
+
 $authObject->signIn();
+
+$authObject->redirectIfAuth();
 
 ?>
 

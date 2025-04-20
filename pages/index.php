@@ -4,7 +4,7 @@
 require_once('../vendor/autoload.php'); # import
 
 
-$name = "Ahmed Arafat";
+//$name = "Ahmed Arafat";
 //echo $name;
 //echo "<h1>$name</h1>";
 
@@ -12,6 +12,14 @@ $myObj = new \App\DB();
 //$myObj->checkConnection();
 //$myObj->Connection->query("SELECT * FROM `users`");
 
+$authObject = new \App\Authenticate();
+
+$authObject->redirectIfNotAuth();
+
+$authObject->logout();
+
+//echo "<pre>";
+//var_dump($_SESSION);
 
 ?>
 <!doctype html>
@@ -30,7 +38,7 @@ $myObj = new \App\DB();
     <title>Home Page</title>
 </head>
 <body>
-    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/IA/pages/Layout/Navbar.php' ?>
-<h1>Welcome Back, <?php echo $name ?></h1>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/IA/pages/Layout/Navbar.php' ?>
+<h1>Welcome Back, <?php echo $_SESSION['userName'] ?></h1>
 </body>
 </html>
