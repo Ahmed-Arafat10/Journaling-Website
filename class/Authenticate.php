@@ -31,4 +31,41 @@ class Authenticate
             }
         }
     }
+
+    public function signIn()
+    {
+        if (isset($_POST['logInBtn'])) {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            // myDBObject -> DB
+            // Connection -> mysqli
+            // queryStmtObject -> mysqli_stmt
+            // resultObject -> mysqli_result
+            $myDBObject = new DB();
+            $selectStatement = 'SELECT * FROM `user` WHERE email = ?';
+            $queryStmtObject = $myDBObject->Connection->prepare($selectStatement);
+            $queryStmtObject->bind_param('s', $email);
+            $queryStatus = $queryStmtObject->execute();
+            if (!$queryStatus)
+                Alert::PrintMessage('Something went wrong', 'Danger');
+            else {
+                $resultObject = $queryStmtObject->get_result();
+                //echo "<pre>";
+                //var_dump($resultObject);
+                if ($resultObject->num_rows == 1) {
+                    $rowArr = $resultObject->fetch_assoc();
+                    //var_dump($rowArr);
+                    if(password_verify($password, $rowArr["password"])) {
+                        // Authenticated
+                        Alert::PrintMessage("Welcome Back, " . $rowArr['name'], 'Normal');
+                    }else{
+                        Alert::PrintMessage('Wrong password', 'Danger');
+                    }
+                } else {
+                    Alert::PrintMessage('Email is not valid', 'Danger');
+                }
+            }
+        }
+
+    }
 }
