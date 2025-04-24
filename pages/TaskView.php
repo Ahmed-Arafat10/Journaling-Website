@@ -10,6 +10,10 @@ $taskObject = new \App\Task();
 // foreach for while
 $allTasks = $taskObject->getTodaysTasks(); // object of class mysqli_result
 
+$taskObject->deleteTask();
+
+$taskObject->updateTaskStatus();
+
 //var_dump($allTasks);
 ?>
 
@@ -40,7 +44,7 @@ $allTasks = $taskObject->getTodaysTasks(); // object of class mysqli_result
     <table class="table table-dark container">
         <tr>
             <th>Task</th>
-            <!--            <th>Mark As Complete</th>-->
+            <th>Task Status</th>
             <th>Edit Task</th>
             <th>Delete Task</th>
         </tr>
@@ -56,13 +60,27 @@ $allTasks = $taskObject->getTodaysTasks(); // object of class mysqli_result
                         <?php echo $task['note'] ?>
                     </td>
                 <?php endif; ?>
+
+                <?php if ($task['is_done'] == 1): ?>
+                    <td>
+                        <a href="?taskStatus=0&taskId=<?php echo $task['id']?>">
+                            <button class="btn btn-secondary text-center">Undo</button>
+                        </a>
+                    </td>
+                <?php else: ?>
+                    <td>
+                        <a href="?taskStatus=1&taskId=<?php echo $task['id']?>">
+                            <button class="btn btn-info text-center">Mark As Complete</button>
+                        </a>
+                    </td>
+                <?php endif; ?>
                 <td>
-                    <a href="#"">
-                        <button class="btn btn-warning text-center">Edit</button>
+                    <a href="TaskUpdate.php?taskId=<?php echo $task['id']?>">
+                        <button class="btn btn-warning text-center">Update</button>
                     </a>
                 </td>
                 <td>
-                    <a href="#">
+                    <a href="?taskToDelete=<?php echo $task['id']?>">
                         <button class="btn btn-danger text-center">Delete</button>
                     </a>
                 </td>

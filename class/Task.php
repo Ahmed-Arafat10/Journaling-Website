@@ -36,4 +36,64 @@ class Task
         $queryStmtObject->execute();
         return $queryStmtObject->get_result();// mysqli_result
     }
+
+    public function getTaskById($taskId)
+    {
+        $selectStatement = 'SELECT * FROM `to-do-list` WHERE id = ?';
+        $myDBObject = new \App\DB();
+        $queryStmtObject = $myDBObject->Connection->prepare($selectStatement);
+        $queryStmtObject->bind_param('i', $taskId);
+        $queryStmtObject->execute();
+        return ($queryStmtObject->get_result())->fetch_assoc();// mysqli_result
+    }
+
+    public function updateTask($taskId)
+    {
+        if (isset($_POST['updateTaskBtn'])) {
+            $updatedTask = $_POST['taskInput'];
+            $updateStatement = 'UPDATE `to-do-list` SET note = ? WHERE id = ?';
+            $myDBObject = new \App\DB();
+            $queryStmtObject = $myDBObject->Connection->prepare($updateStatement);
+            $queryStmtObject->bind_param('si', $updatedTask, $taskId);
+            $checkQuery = $queryStmtObject->execute();
+            if ($checkQuery)
+                header('location: TaskView.php');
+            else
+                Alert::PrintMessage("Failed To Update Task", "Danger");
+        }
+    }
+
+    public function deleteTask()
+    {
+        if (isset($_GET['taskToDelete'])) {
+            $taskId = $_GET['taskToDelete'];
+            $deleteStatement = 'DELETE FROM `to-do-list` WHERE id = ?';
+            $myDBObject = new \App\DB();
+            $queryStmtObject = $myDBObject->Connection->prepare($deleteStatement);
+            $queryStmtObject->bind_param('i', $taskId);
+            $checkQuery = $queryStmtObject->execute();
+            if ($checkQuery)
+                header('location: TaskView.php');
+            else
+                Alert::PrintMessage("Failed To Delete Task", "Danger");
+        }
+    }
+
+    public function updateTaskStatus()
+    {
+        if (isset($_GET['taskStatus'])) {
+            $taskStatus = $_GET['taskStatus'];// 0 1
+            $taskId = $_GET['taskId'];
+            $updateStatement = 'UPDATE `to-do-list` SET is_done = ? WHERE id = ?';
+            $myDBObject = new \App\DB();
+            $queryStmtObject = $myDBObject->Connection->prepare($updateStatement);
+            $queryStmtObject->bind_param('ii', $taskStatus, $taskId);
+            $checkQuery = $queryStmtObject->execute();
+            if ($checkQuery)
+                header('location: TaskView.php');
+            else
+                Alert::PrintMessage("Failed To Update Task Status", "Danger");
+        }
+    }
+
 }

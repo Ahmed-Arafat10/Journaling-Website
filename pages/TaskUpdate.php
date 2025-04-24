@@ -6,9 +6,6 @@ require_once('../vendor/autoload.php');
 
 $authObj = new \App\Authenticate();
 $authObj->redirectIfNotAuth();
-
-(new Task())->createNewTask();
-
 ?>
 
 <!doctype html>
@@ -34,27 +31,46 @@ $authObj->redirectIfNotAuth();
 
 </head>
 <body>
+
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/IA/pages/Layout/Navbar.php') ?>
+
+<?php
+if(empty($_GET['taskId'])){
+    \App\Alert::PrintMessage("Cannot Access This Page", "Danger");
+    exit();
+}
+
+$taskId = $_GET['taskId'];
+
+$taskObject = new Task();
+
+$taskToUpdateArr = $taskObject->getTaskById($taskId);
+
+$taskObject->updateTask($taskId);
+
+//var_dump($taskToUpdateArr);
+
+?>
 
 
 <br>
 
 <!-- To-Do-List Container Start -->
 <div class="To-Do-List Container">
-    <h1 style="font-style: italic;margin:15px auto">Add New Task </h1>
+    <h1 style="font-style: italic;margin:15px auto">Update Task </h1>
     <div class="container col-4">
         <form action="" method="post">
             <div class="col">
                 <div class="col">
                     <label style="font-weight: bold;" for="NoteIN"> Task :</label>
-                    <input required id="AddData" class="form-control " type="text" name="taskInput" id="NoteIN"
+                    <input required value="<?php echo $taskToUpdateArr['note']?>" id="AddData" class="form-control " type="text" name="taskInput" id="NoteIN"
                            placeholder="Enter Task Here">
                 </div>
             </div>
             <div class="col">
                 <div class="text-center">
-                    <button style="margin-top: 20px;" type="submit" name="addNewTaskBtn"
-                            class="btn btn-outline-primary text-center">Add task
+                    <button style="margin-top: 20px;" type="submit" name="updateTaskBtn"
+                            class="btn btn-outline-primary text-center">Update task
                     </button>
                 </div>
             </div>
@@ -66,4 +82,3 @@ $authObj->redirectIfNotAuth();
 
 </body>
 </html>
-

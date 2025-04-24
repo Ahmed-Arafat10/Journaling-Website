@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83db93b1-ef8e-44d9-9ec9-ec36700fb7dc" name="Changes" comment="" />
+    <list default="true" id="83db93b1-ef8e-44d9-9ec9-ec36700fb7dc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TaskCreate.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/TaskCreate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TaskView.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/TaskView.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +43,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;BIS__Section__2025&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/xampp/htdocs/IA&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/xampp/htdocs/IA/DB&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -49,9 +54,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\IA\DB" />
       <recent name="D:\xampp\htdocs\IA" />
       <recent name="D:\xampp\htdocs\IA\assets\js" />
       <recent name="D:\xampp\htdocs\IA\assets\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\IA\DB" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -80,6 +89,8 @@
       <workItem from="1742716866642" duration="15622000" />
       <workItem from="1743878441768" duration="8541000" />
       <workItem from="1744274656214" duration="16388000" />
+      <workItem from="1745135017627" duration="17378000" />
+      <workItem from="1745527477478" duration="3900000" />
     </task>
     <servers />
   </component>
