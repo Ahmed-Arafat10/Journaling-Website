@@ -163,8 +163,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `Name`, `Password`, `Email`) VALUES
-(1, 'ging', '123', 'ahmedmoyousry.bis@gmail.com'),
-(2, 'ahmed', '123', 'ahmedmoyousry.bis@gmail.com');
+(1, 'ging', '123', 'arafat.software.engineer@gmail.com'),
+(2, 'ahmed', '123', 'arafat.software.engineer@gmail.com');
 
 --
 -- Indexes for dumped tables
