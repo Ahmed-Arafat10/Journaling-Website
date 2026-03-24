@@ -11,6 +11,7 @@
 - php variables (`$age = 26`)
 - What is composer Package Manager
 - How to install composer package manager
+- write command `composer` in terminal to check it is working
 - `composer.json` file
 - What is `JSON (Javascript Object Notation)`
 - Creating our important class `DB.php` that will help us to connect to Database
