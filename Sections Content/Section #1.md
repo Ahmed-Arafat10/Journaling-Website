@@ -26,4 +26,4 @@
   - programming 1 Topics (variable,operators, conditions,loops, arrays, functions)
   - programming 2 Main Topics (different between class and object)
   - Basic sql queries understanding
-  - Basic html (frontend)
+  - Basic HTML (frontend)
