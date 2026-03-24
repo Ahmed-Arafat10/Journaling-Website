@@ -3,7 +3,7 @@
 - Our project's folder main structure
     - `assets`
     - `class`
-    - 'pages'
+    - `pages`
 - What is Bootstrap 5
 - File `Navbar.php` > `Layouts` > `pages`
 - Include content of another page via `require_once()` function
