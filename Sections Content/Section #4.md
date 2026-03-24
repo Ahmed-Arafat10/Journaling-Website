@@ -1,0 +1,21 @@
+### Section 4:
+- arrays in php (numeric and associative)
+- Super global arrays like: `$_SERVER`
+- `var_dump()` function
+- `$_SERVER['DOCUMENT_ROOT']`
+- recap of `<form>` & `<input>` tags
+- name attribute in `<input>` tags
+- method attribute in `<form>` tag (`POST` or `GET`)
+- `POST` Vs `GET`
+- `isset()` function
+- `$_POST` Super global arrays
+- Create class `Alert.php`
+- static methods/attributes in OOP
+- `PrintMessage()` method
+- Sign Up Page Logic
+    - How to insert a new record in DB
+        - Raw SQL insert statement
+        - `password_hash()`
+        - `prepare()`
+        - `bind_param()`
+        - `execute()`

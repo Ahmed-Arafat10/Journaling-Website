@@ -1,0 +1,29 @@
+### Section 1:
+- Client-server Architecture (Networks)
+- Server Properties
+- Browser
+  - HTTP Service
+  - Render (HTML/CSS/JS)
+- HTTP request Vs HTTP response
+- HTTP Status code
+  - 200
+  - 404
+  - 500
+- DNS Server
+- Different Types of Servers
+  - Web
+  - DNS (Domain Name System)
+  - FTP (File Transfer Protocol)
+  - SMTP (Simple Mail Transfer Protocol)
+- Web server software
+  - Apache
+  - NginX
+- Why businessmen want to integrate Information Systems in their organizations 
+- Different between frontend and backend
+- Technologies of frontend and backend
+- Database types (relational vs non-relational)
+- Requirements for this course
+  - programming 1 Topics (variable,operators, conditions,loops, arrays, functions)
+  - programming 2 Main Topics (different between class and object)
+  - Basic sql queries understanding
+  - Basic html (frontend)
