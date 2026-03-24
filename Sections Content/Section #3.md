@@ -28,4 +28,4 @@
 - `composer install` command
 - namespace in PHP
 - class Autoloading feature in composer
-- `require_once '../vendor/autoload';` statement
+- `require_once '../vendor/autoload.php';` statement
