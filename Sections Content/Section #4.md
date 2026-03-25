@@ -1,5 +1,6 @@
 ### Section 4:
 - arrays in php (numeric and associative)
+- double quotes vs single quotes in strings in php
 - Super global arrays like: `$_SERVER`
 - `var_dump()` function
 - `$_SERVER['DOCUMENT_ROOT']`
