@@ -25,6 +25,9 @@ $auth->signUp();
 </head>
 
 <body>
+
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/IA/pages/Layout/Navbar.php'; ?>
+
 <form method="post">
     <div class="Login-Card">
         <div class="screen-1">
