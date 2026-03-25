@@ -19,4 +19,5 @@
   - `name` attribute
 - HTTP `POST` Vs `GET`
 - What is HTTPS
+- Create class `Authenticate.php`
 - `$_POST` Super global arrays

@@ -8,6 +8,8 @@ use App\DB;
 $DB = new DB();
 //$DB->connection->query()
 $DB->check();
+
+
 ?>
 <!doctype html>
 <html lang="en">

@@ -1,9 +1,10 @@
 <?php
 
+use App\Authenticate;
+
 require_once '../vendor/autoload.php';
 
-$auth = new \App\Authenticate();
-
+$auth = new Authenticate();
 $auth->signUp();
 
 ?>
