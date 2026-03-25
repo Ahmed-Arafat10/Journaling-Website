@@ -1,22 +1,22 @@
 ### Section 4:
 - arrays in php (numeric and associative)
 - double quotes vs single quotes in strings in php
-- Super global arrays like: `$_SERVER`
+- Super global arrays
+  - `$_SERVER`
+  - `$_POST`
+  - `$_GET`
+  - `$_SESSION`
 - `var_dump()` function
-- `$_SERVER['DOCUMENT_ROOT']`
-- recap of `<form>` & `<input>` tags
-- name attribute in `<input>` tags
-- method attribute in `<form>` tag (`POST` or `GET`)
-- `POST` Vs `GET`
-- `isset()` function
+- inspect elements inside Super global arrays `$_SERVER` using `var_dump()` function
+- Create `SignUp.php` page
+- recap on some HTML Tags/Attributes
+  - `<form>`
+  - `method` attribute in `<form>` tag (`POST` or `GET`)
+  - `<label>`
+  - `<input>`
+  - `type` attribute
+  - `placeholder` attribute
+  - `name` attribute
+- HTTP `POST` Vs `GET`
+- What is HTTPS
 - `$_POST` Super global arrays
-- Create class `Alert.php`
-- static methods/attributes in OOP
-- `PrintMessage()` method
-- Sign Up Page Logic
-    - How to insert a new record in DB
-        - Raw SQL insert statement
-        - `password_hash()`
-        - `prepare()`
-        - `bind_param()`
-        - `execute()`
