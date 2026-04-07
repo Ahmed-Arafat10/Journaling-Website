@@ -1,12 +1,16 @@
 ### Section 5:
 - function `isset()`
-- `Alert.php` class & `PrintMessage()` method
+- `Alert` class & `PrintMessage()` method
 - static keyword
 - Sign Up Page Logic
+    - basic validation (confirm password should match confirm password)
+    - password hashing
+    - encryption vs hashing
+    - sql injection
     - How to insert a new record in DB
         - Raw SQL insert statement
         - `prepare()`
         - `bind_param()`
         - `execute()`
 - Set Up frontend of login page
-- redirect with `header()` function + adding query parameter `?doneRegister=1`
+- redirect with `header()` function to redirect to `SignIn.php` page + adding query parameter `?doneRegister=1`
