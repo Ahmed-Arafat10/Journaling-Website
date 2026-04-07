@@ -1,14 +1,12 @@
 ### Section 5:
 - function `isset()`
+- `Alert.php` class & `PrintMessage()` method
+- static keyword
 - Sign Up Page Logic
     - How to insert a new record in DB
         - Raw SQL insert statement
         - `prepare()`
         - `bind_param()`
         - `execute()`
-- redirect with `header()` function + adding query parameter `?doneRegister=1`
-- `Alert.php` class & `PrintMessage()` method
-- `$_GET` Super global array
 - Set Up frontend of login page
-- Sign In Page Logic
-- Explaining Session in php Theoretically
+- redirect with `header()` function + adding query parameter `?doneRegister=1`
