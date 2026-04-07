@@ -1,4 +1,5 @@
 ### Section 5:
+- function `isset()`
 - Sign Up Page Logic
     - How to insert a new record in DB
         - Raw SQL insert statement
