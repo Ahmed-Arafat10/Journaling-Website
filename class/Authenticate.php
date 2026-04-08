@@ -10,22 +10,24 @@ class Authenticate
             //var_dump($_POST, $_SERVER['REQUEST_METHOD']);
             $username = $_POST['username'];
             $email = $_POST['email'];
-            $password = $_POST['password']; // Plain text
+            $password = $_POST['password'];
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             $confirmPassword = $_POST['confirm_password'];
+            // string integer string integer integer string
+            // sisiis
             if ($password != $confirmPassword) {
-                Alert::PrintMessage('Passwords do not match', 'Danger');
+                \App\Alert::printMessage("Password is not matched", "danger");
             } else {
-                $DB = new DB();
-                $insertQuery = "INSERT INTO `user` VALUES (NULL,?,?,?)";
-                $prepareStmtObj = $DB->connection->prepare($insertQuery);
-                $prepareStmtObj->bind_param('sss', $username, $email, $hashedPassword);
-                $check = $prepareStmtObj->execute();
-                if ($check) {
-                    //Alert::PrintMessage('User created successfully', 'Success');
-                    header('Location: SignIn.php');
+                $db = new DB();
+                $insertQuery = "INSERT INTO `user` VALUES(NULL,?,?,?)";
+                $prepareStmt = $db->connection->prepare($insertQuery);
+                $prepareStmt->bind_param('sss', $username, $email, $hashedPassword);
+                $checkQuery = $prepareStmt->execute();
+                if ($checkQuery) {
+                    header("Location: SignIn.php?signUpFinished=1");
+                   // \App\Alert::printMessage("Sign Up Success", "success");
                 } else {
-                    Alert::PrintMessage('Something went wrong', 'Danger');
+                    \App\Alert::printMessage("Sign Up Failed", "danger");
                 }
             }
         }
