@@ -35,6 +35,7 @@
 //var_dump($username);
 
 /*
+ *
  Super Global Arrays
     $_SERVER
     $_POST
@@ -48,8 +49,15 @@
 // condition ? true : false;
 // post get
 //echo session_start();// 123xyz
-echo "<br>";
-echo (session_id() == "" ? "No Session" : session_id());
-$_SESSION['userID'] = 2;
-echo "<br>";
-var_dump($_SESSION);
+//echo "<br>";
+//echo (session_id() == "" ? "No Session" : session_id());
+//$_SESSION['userID'] = 2;
+//echo "<br>";
+//var_dump($_SESSION);
+session_start();
+echo session_id();
+
+$headers = getallheaders();
+echo '<pre>';
+print_r($headers);
+echo '</pre>';
