@@ -1,185 +1,142 @@
-* {
-    box-sizing: border-box;
-}
-
-.container {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 body {
-    background-color: #eaeaea;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    /*background: linear-gradient(135deg, #667eea, #764ba2);*/
 }
 
-
-#Logout {
-    background-color: red;
-    border-radius: 10px;
-    color: silver;
-}
-
-#Logout:hover {
-    background-color: rgb(197, 74, 74);
-}
-
-/* Login Card Start */
-* {
-    font-family: "Poppins";
-}
-
+/* Centering */
 .Login-Card {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    overflow-y: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #dde5f4;
     height: 100vh;
 }
 
+/* Card */
 .screen-1 {
-    background: #f1f7fe;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    border-radius: 30px;
-    box-shadow: 0 0 2em #e6e9f9;
-    gap: 2em;
-}
-
-.screen-1 .logo {
-    margin-top: -3em;
-}
-
-.screen-1 .email {
     background: white;
-    box-shadow: 0 0 2em #e6e9f9;
-    padding: 1em;
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
-    border-radius: 20px;
-    color: #4d4d4d;
+    gap: 20px;
+    animation: fadeIn 0.5s ease;
 }
 
-.screen-1 .email input {
-    outline: none;
-    border: none;
-}
-
-/* .screen-1 .email input::-moz-placeholder {
-  color: black;
-  font-size: 0.9em;
-}
-.screen-1 .email input:-ms-input-placeholder {
-  color: black;
-  font-size: 0.9em;
-}
-.screen-1 .email input::placeholder {
-  color: black;
-  font-size: 0.9em;
-} */
-.screen-1 .email ion-icon {
-    color: #4d4d4d;
-    margin-bottom: -0.2em;
-}
-
-.screen-1 .password {
-    background: white;
-    box-shadow: 0 0 2em #e6e9f9;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-    border-radius: 20px;
-    color: #4d4d4d;
-}
-
-.screen-1 .password input {
-    outline: none;
-    border: none;
-}
-
-.screen-1 .password input::-moz-placeholder {
-    color: black;
-    font-size: 0.9em;
-}
-
-.screen-1 .password input:-ms-input-placeholder {
-    color: black;
-    font-size: 0.9em;
-}
-
-.screen-1 .password input::placeholder {
-    color: black;
-    font-size: 0.9em;
-}
-
-.screen-1 .password ion-icon {
-    color: #4d4d4d;
-    margin-bottom: -0.2em;
-}
-
-.screen-1 .password .show-hide {
-    margin-right: -5em;
-}
-
-.screen-1 .login {
-    padding: 1em;
-    background: #3e4684;
-    color: white;
-    border: none;
-    border-radius: 30px;
+.title {
+    text-align: center;
     font-weight: 600;
 }
 
-.screen-1 .footer {
+/* Inputs */
+.input-group {
     display: flex;
-    font-size: 0.7em;
-    color: #5e5e5e;
-    gap: 14em;
-    padding-bottom: 10em;
+    align-items: center;
+    background: #f3f4f6;
+    padding: 12px;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
-.screen-1 .footer span {
+.input-group:focus-within {
+    background: #e0e7ff;
+}
+
+.input-group ion-icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #555;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+}
+
+/* Password toggle */
+.password-group {
+    position: relative;
+}
+
+.toggle {
     cursor: pointer;
 }
 
-button {
-    cursor: pointer;
+/* Remember + forgot */
+.rememberme {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
 }
 
-/*Login Card End*/
+.rememberme a {
+    text-decoration: none;
+    color: #667eea;
+}
 
+/* Button */
+.login {
+    background: #667eea;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
 
-h1, h4, h3 {
+.login:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
     text-align: center;
+    font-size: 14px;
 }
 
-.Container {
-    margin-top: 50px;
+.footer a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-
-input {
-    margin: 10px;
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-table, tr, th, td {
+.main-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    color: #fff;
     text-align: center;
+    padding: 12px 10px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    z-index: 1000;
 }
 
-table, input {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+.footer-content p {
+    margin: 0;
 }
 
-/*table, tr, th, td, tbody {*/
-/*    border-radius: 20px;*/
-/*}*/
+/* Optional hover effect */
+.main-footer:hover {
+    background: rgba(0, 0, 0, 0.85);
+}

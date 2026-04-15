@@ -25,38 +25,36 @@
     <div class="Login-Card">
         <div class="screen-1">
 
-            <div class="email">
-                <label for="email">Email</label>
-                <div class="sec-2">
-                    <ion-icon name="mail-outline"></ion-icon>
-                    <input required type="email" name="email" placeholder="Ex: ahmed@gmail.com"/>
-                </div>
+            <h2 class="title">Welcome Back</h2>
+
+            <div class="input-group">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input autocomplete="off" required type="email" name="email" placeholder="Email Address">
             </div>
 
-            <div class="password">
-                <label for="password">Password</label>
-                <div class="sec-2">
-                    <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input required class="pas" type="password" name="password" placeholder="·········"/>
-                    <!-- <ion-icon class="show-hide" name="eye-outline"></ion-icon> -->
-                </div>
+            <div class="input-group password-group">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input required id="password" type="password" name="password" placeholder="Password">
+                <ion-icon id="togglePassword" class="toggle" name="eye-outline"></ion-icon>
             </div>
 
             <div class="rememberme">
-                <input type="checkbox" name="RememberMe" id="" value="1">
-                <label for="">Remember Me</label>
+                <label>
+                    <input type="checkbox" name="RememberMe" value="1">
+                    Remember Me
+                </label>
+                <a href="#" class="forgot">Forgot Password?</a>
             </div>
 
             <button type="submit" name="logInBtn" class="login">Login</button>
 
             <div class="footer">
-                <a href="">
-                    Sign Up
-                </a>
-                <span>Forgot Password?</span>
+                <p>Don't have an account? <a href="SignUp.php">Sign Up</a></p>
             </div>
 
         </div>
+    </div>
 </form>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/IA/pages/Layout/Footer.php') ?>
 </body>
 </html>
