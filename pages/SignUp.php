@@ -7,6 +7,7 @@ require_once '../vendor/autoload.php';
 $auth = new Authenticate();
 $auth->signUp();
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

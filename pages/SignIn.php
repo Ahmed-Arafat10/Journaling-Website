@@ -1,3 +1,19 @@
+<?php
+
+use App\Authenticate;
+
+require_once '../vendor/autoload.php';
+
+$alert = new \App\Alert();
+$alert->showSuccessSignUpAlert();
+
+$auth = new Authenticate();
+$auth->signIn();
+$auth->redirectIfAuth();
+
+//();
+//var_dump($_SESSION);
+?>
 <!DOCTYPE html>
 <html lang="en">
 

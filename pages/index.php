@@ -3,12 +3,17 @@
 # autoloading
 require_once "../vendor/autoload.php";
 
+use App\Authenticate;
 use App\DB;
 
 $DB = new DB();
 //$DB->connection->query()
 $DB->check();
 
+$auth = new Authenticate();
+$auth->redirectIfNotAuth();
+
+$auth->signOut();
 
 ?>
 <!doctype html>
@@ -28,6 +33,10 @@ $DB->check();
 </head>
 <body>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/IA/pages/Layout/Navbar.php'; ?>
-<h1>Welcome Back, Ahmed Arafat (Static Value)</h1>
+<?php if (isset($_SESSION['userName'])): ?>
+    <h1>Welcome Back, <?php echo $_SESSION['userName'] ?></h1>
+<?php else: ?>
+    <h1>Welcome To our lovely website :)</h1>
+<?php endif; ?>
 </body>
 </html>

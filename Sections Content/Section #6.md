@@ -1,0 +1,17 @@
+### Section 6:
+- Sign In Page Logic
+  - `get_result()` method (class `mysqli_result`)
+  - `num_rows` property
+  - `fetch_assoc()` method
+  - `password_verify()` method
+- What is Session? (Theoretically)
+- Function `session_start()`
+- Function `session_id()`
+- Super Global Array `$_SESSION`
+- Method `isAuth()` in class `Authenticate`
+- Method `redirectIfNotAuth()` in class `Authenticate`
+- Method `redirectIfAuth()` in class `Authenticate`
+- Method `logOut()` in class `Authenticate`
+- Show buttons logOut/signIn/signOut/Add New Task/View Tasks in `Navbar.php`
+- `TaskCreate.php` page frontEnd
+- `TaskView.php` page frontEnd
