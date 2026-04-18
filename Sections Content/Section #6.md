@@ -1,4 +1,5 @@
 ### Section 6:
+- Method `showSuccessSignUpAlert()` in class `Alert`
 - Sign In Page Logic
   - `get_result()` method (class `mysqli_result`)
   - `num_rows` property
