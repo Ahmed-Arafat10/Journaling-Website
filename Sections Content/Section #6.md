@@ -1,5 +1,6 @@
 ### Section 6:
 - Method `showSuccessSignUpAlert()` in class `Alert`
+- `$_GET` superglobal array
 - Sign In Page Logic
   - `get_result()` method (class `mysqli_result`)
   - `num_rows` property
