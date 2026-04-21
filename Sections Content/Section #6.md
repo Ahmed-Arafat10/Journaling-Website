@@ -14,6 +14,6 @@
 - Method `redirectIfNotAuth()` in class `Authenticate`
 - Method `redirectIfAuth()` in class `Authenticate`
 - Method `signOut()` in class `Authenticate`
-- Show buttons logOut/signIn/signOut/Add New Task/View Tasks in `Navbar.php`
+- Show buttons logOut/signIn/Add New Task/View Tasks in `Navbar.php`
 - `TaskCreate.php` page frontEnd
 - `TaskView.php` page frontEnd
