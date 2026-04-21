@@ -8,7 +8,7 @@ use App\DB;
 
 $DB = new DB();
 //$DB->connection->query()
-$DB->check();
+//$DB->check();
 
 $auth = new Authenticate();
 $auth->redirectIfNotAuth();
