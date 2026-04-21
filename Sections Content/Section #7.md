@@ -1,4 +1,5 @@
 ### Section 7:
+- What are `CRUD` operations?
 - `TaskCreate.php` page frontEnd + php logic
 - `TaskView.php` page frontEnd + php logic
 - `date()` function in php
