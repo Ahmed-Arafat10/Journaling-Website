@@ -4,8 +4,12 @@ require_once('../vendor/autoload.php');
 
 (new \App\Authenticate())->redirectIfNotAuth();
 
-$allTasks = (new \App\Task())->readOperation_getTodaysTasks();
+$taskObj = new \App\Task();
+$allTasks = $taskObj->readOperation_getTodaysTasks();
 // While for foreach
+
+$taskObj->changeTaskStatus();
+$taskObj->delete();
 
 ?>
 
@@ -56,24 +60,24 @@ $allTasks = (new \App\Task())->readOperation_getTodaysTasks();
 
                 <?php if ($task['is_done'] == 1): ?>
                     <td>
-                        <a href="?taskStatus=0&taskId=<?php echo $task['id']?>">
+                        <a href="?taskStatus=0&taskId=<?php echo $task['id'] ?>">
                             <button class="btn btn-secondary text-center">Undo</button>
                         </a>
                     </td>
                 <?php else: ?>
                     <td>
-                        <a href="?taskStatus=1&taskId=<?php echo $task['id']?>">
+                        <a href="?taskStatus=1&taskId=<?php echo $task['id'] ?>">
                             <button class="btn btn-info text-center">Mark As Complete</button>
                         </a>
                     </td>
                 <?php endif; ?>
                 <td>
-                    <a href="TaskUpdate.php?taskId=<?php echo $task['id']?>">
+                    <a href="TaskUpdate.php?taskId=<?php echo $task['id'] ?>">
                         <button class="btn btn-warning text-center">Update</button>
                     </a>
                 </td>
                 <td>
-                    <a href="?taskToDelete=<?php echo $task['id']?>">
+                    <a href="?taskIdToDelete=<?php echo $task['id'] ?>">
                         <button class="btn btn-danger text-center">Delete</button>
                     </a>
                 </td>
@@ -82,7 +86,6 @@ $allTasks = (new \App\Task())->readOperation_getTodaysTasks();
     </table>
 </div>
 <hr>
-
-
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/IA/pages/Layout/Footer.php') ?>
 </body>
 </html>

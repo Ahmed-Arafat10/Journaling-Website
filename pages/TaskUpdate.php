@@ -1,10 +1,21 @@
 <?php
 
+use App\Alert;
+
 require_once '../vendor/autoload.php';
 
 (new App\Authenticate())->redirectIfNotAuth();
 
-(new \App\Task())->create();
+$taskObj = new \App\Task();
+//(new \App\Task())->create();
+
+$taskId = $_GET['taskId']; // 18
+
+$myTaskArr = $taskObj->getTaskById($taskId);
+
+$taskObj->update($taskId);
+
+//var_dump($myTaskRecord);
 
 ?>
 <!doctype html>
@@ -32,25 +43,36 @@ require_once '../vendor/autoload.php';
 <body>
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/IA/pages/Layout/Navbar.php') ?>
 
+<?php
+
+if($myTaskArr == null){
+    Alert::printMessage("You Are not Authorized to View/Update this task", "danger");
+    exit();
+}
+
+
+?>
 
 <br>
 
 <!-- To-Do-List Container Start -->
 <div class="To-Do-List Container">
-    <h1 style="font-style: italic;margin:15px auto">Add New Task </h1>
+    <h1 style="font-style: italic;margin:15px auto">Update Task </h1>
     <div class="container col-4">
         <form action="" method="post">
             <div class="col">
                 <div class="col">
                     <label style="font-weight: bold;" for="NoteIN"> Task :</label>
-                    <input required id="AddData" class="form-control " type="text" name="taskInput" id="NoteIN"
-                          autocomplete="off"  placeholder="Enter Task Here">
+                    <input required id="UpdateData" class="form-control " type="text" name="taskInput" id="NoteIN"
+                           autocomplete="off"  placeholder="Enter Task Here"
+                    value="<?php echo $myTaskArr['task'] ?>"
+                    >
                 </div>
             </div>
             <div class="col">
                 <div class="text-center">
-                    <button style="margin-top: 20px;" type="submit" name="addNewTaskBtn"
-                            class="btn btn-outline-primary text-center">Add task
+                    <button style="margin-top: 20px;" type="submit" name="updateTaskBtn"
+                            class="btn btn-outline-primary text-center">Update This task
                     </button>
                 </div>
             </div>
@@ -61,4 +83,3 @@ require_once '../vendor/autoload.php';
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/IA/pages/Layout/Footer.php') ?>
 </body>
 </html>
-
