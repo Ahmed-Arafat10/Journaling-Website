@@ -1,16 +1,16 @@
 <?php
 
-namespace app;
+namespace App;
 
 use mysqli;
 
 class DB
 {
-    private $hostname = 'localhost';
-    private $username = 'root';
-    private $databaseName = 'ia_sections_hu';
-    private $password = '';
-    public $connection;
+    private string $hostname = 'localhost';
+    private string $username = 'root';
+    private string $databaseName = 'ia_sections_hu';
+    private string $password = '';
+    public mysqli $connection;
 
     public function __construct()
     {

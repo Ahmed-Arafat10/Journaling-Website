@@ -4,7 +4,6 @@ require_once '../vendor/autoload.php';
 
 $myDB = new \App\DB();
 
-
 ?>
 <!doctype html>
 <html lang="en">
