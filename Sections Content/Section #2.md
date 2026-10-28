@@ -1,6 +1,16 @@
 ### Section 2:
-- What is XAMPP and apache Web server
-- htdocs folder
+- How to install Laragon
+- Difference between Laragon & Xampp
+- `www` folder in Laragon
+- Our main project's folder `IA/`
 - What project we will build (Journaling)
-- Create our project folder in `htdocs` named `IA`
-- Read DB Schema & create it in Phpmyadmin
+- Write basic `php` file
+- `php` opening and closing tags `<?php ?>`
+- `echo` in php
+- Print string in php (contains HTML tag)
+- How php is executed
+- PHP Engine
+- Database engine vs Database GUI
+- install `PhpMyAdmin` inside Laragon
+- Understand our project's database schema
+- Create our database schema inside `PhpMyAdmin`

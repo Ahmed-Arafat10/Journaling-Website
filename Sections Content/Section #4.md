@@ -1,11 +1,23 @@
 ### Section 4:
-- autoloading all classes in `class` folder,create `composer.json` file, then `composer install`, then `require('../vendor/autoload.php')`
-- namespace in php
 - arrays in php (numeric and associative)
-- Super global arrays like: `$_SERVER`
+- double quotes vs single quotes in strings in php
+- Super global arrays
+  - `$_SERVER`
+  - `$_POST`
+  - `$_GET`
+  - `$_SESSION`
 - `var_dump()` function
-- `$_SERVER['DOCUMENT_ROOT']`
-- Absolute Path
-- `Navbar.php` file
-- recap of `<form>` & `<input>` tags
-- name attribute in `<input>` tags
+- inspect elements inside Super global arrays `$_SERVER` using `var_dump()` function
+- Create `SignUp.php` page
+- recap on some HTML Tags/Attributes
+  - `<form>`
+  - `method` attribute in `<form>` tag (`POST` or `GET`)
+  - `<label>`
+  - `<input>`
+  - `type` attribute
+  - `placeholder` attribute
+  - `name` attribute
+- HTTP `POST` Vs `GET`
+- What is HTTPS
+- Create class `Authenticate.php`
+- `$_POST` Super global arrays

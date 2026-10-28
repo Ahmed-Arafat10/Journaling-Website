@@ -1,6 +1,17 @@
 ### Section 6:
-- redirect with `header()` function + adding query parameter `?doneRegister=1`
-- `$_GET` Super global array
-- Set Up frontend of login page
+- Method `showSuccessSignUpAlert()` in class `Alert`
+- `$_GET` superglobal array
 - Sign In Page Logic
-- Explaining Session in php Theoretically
+  - `get_result()` method (class `mysqli_result`)
+  - `num_rows` property
+  - `fetch_assoc()` method
+  - `password_verify()` method
+- What is Session? (Theoretically)
+- Function `session_start()`
+- Function `session_id()`
+- Super Global Array `$_SESSION`
+- Method `isAuth()` in class `Authenticate`
+- Method `redirectIfNotAuth()` in class `Authenticate`
+- Method `redirectIfAuth()` in class `Authenticate`
+- Method `signOut()` in class `Authenticate`
+- Show buttons logOut/signIn/Add New Task/View Tasks in `Navbar.php`

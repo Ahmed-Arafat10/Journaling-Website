@@ -1,9 +1,31 @@
 ### Section 3:
-- Created some folders to organize our code (`assets`/`class`/`pages` folders)
-- How to create a .php file
-- Example of html code inside php file
-- php variables
-- Echo statements (contains html tag as string)
-- creating our important class `DB.php` that will help us to connect to Database
-- `require_once()` function
-- Relative path
+
+- Our project's folder main structure
+    - `assets`
+    - `class`
+    - `pages`
+- What is Bootstrap 5
+- File `Navbar.php` > `Layouts` > `pages`
+- Include content of another page via `require_once()` function
+- Absolute Path vs Relative Path
+- php variables (`$age = 26`)
+- What is composer Package Manager
+- How to install composer package manager
+- write command `composer` in terminal to check it is working
+- `composer.json` file
+- What is `JSON (Javascript Object Notation)`
+- Creating our important class `DB.php` that will help us to connect to Database
+    - Class Vs Object
+    - attributes
+    - methods
+    - access modifiers (public/private/protected)
+    - constructor (parametrized & non-parametrized)
+    - user-defined vs built-in class
+    - object initiation
+    - `$this` operator
+    - arrow operator `->`
+- Creat Object from class `DB` and then call method `check()`
+- `composer install` command
+- namespace in PHP
+- class Autoloading feature in composer
+- `require_once '../vendor/autoload.php';` statement

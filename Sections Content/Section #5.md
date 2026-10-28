@@ -1,12 +1,16 @@
 ### Section 5:
-- method attribute in `<form>` tag (`POST` or `GET`)
-- `POST` Vs `GET`
-- `isset()` function
-- `$_POST` Super global arrays
-- `Alert.php` class & `PrintMessage()` method
+- function `isset()`
+- `Alert` class & `PrintMessage()` method
+- static keyword
 - Sign Up Page Logic
-  - How to insert a new record in DB
-    - Raw SQL insert statement
-    - `prepare()`
-    - `bind_param()`
-    - `execute()`
+    - basic validation (password should match confirm password)
+    - password hashing
+    - encryption vs hashing
+    - SQL injection
+    - How to insert a new record in DB
+        - Raw SQL insert statement
+        - `prepare()`
+        - `bind_param()`
+        - `execute()`
+- Set Up login page's frontend
+  - redirect with `header()` function to redirect to `SignIn.php` page + adding query parameter `?successSignUp=1`

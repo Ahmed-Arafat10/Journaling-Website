@@ -1,12 +1,7 @@
 ### Section 7:
-- Recap on Session in php Theoretically
-- Function `session_start()`
-- Function `session_id()`
-- Super Global Array `$_SESSION`
-- Method `isAuth()` in class `Authenticate`
-- Method `redirectIfNotAuth()` in class `Authenticate`
-- Method `redirectIfAuth()` in class `Authenticate`
-- Method `logOut()` in class `Authenticate`
-- Add buttons logOut/signIn/signOut in `Navbar.php`
+- What are `CRUD` operations?
 - `TaskCreate.php` page frontEnd + php logic
 - `TaskView.php` page frontEnd + php logic
+- `date()` function in php
+- Difference between `while`/`for`/`foreach` loops
+- Anonymous Objects (Temporary Objects) in php
