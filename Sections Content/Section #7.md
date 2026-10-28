@@ -1,0 +1,12 @@
+### Section 7:
+- Recap on Session in php Theoretically
+- Function `session_start()`
+- Function `session_id()`
+- Super Global Array `$_SESSION`
+- Method `isAuth()` in class `Authenticate`
+- Method `redirectIfNotAuth()` in class `Authenticate`
+- Method `redirectIfAuth()` in class `Authenticate`
+- Method `logOut()` in class `Authenticate`
+- Add buttons logOut/signIn/signOut in `Navbar.php`
+- `TaskCreate.php` page frontEnd + php logic
+- `TaskView.php` page frontEnd + php logic
