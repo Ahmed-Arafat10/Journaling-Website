@@ -30,4 +30,10 @@ $arr1 = [
 /*
 
  */
-echo "<pre>";
+//echo "<pre>";
+
+$age = 26;
+
+echo "My Age is $age";
+echo "<br>";
+echo 'My Age is $age';
