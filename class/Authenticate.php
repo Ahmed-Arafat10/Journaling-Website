@@ -31,9 +31,9 @@ class Authenticate
             // SQL injection
             $stmtObj->bind_param('sss', $username, $email, $hashedPassword);
             $checkQuery = $stmtObj->execute();
-            if($checkQuery){
+            if ($checkQuery) {
                 Alert::printMessage("Sign up successful", "success");
-            }else{
+            } else {
                 Alert::printMessage("Sign up failed", "danger");
             }
         }

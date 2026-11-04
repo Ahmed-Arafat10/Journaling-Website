@@ -21,6 +21,6 @@
     <title>Home Page</title>
 </head>
 <body>
-    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '\IA_HU_2026\pages\Layout\navbar.php'; ?>
+    <?php require_once($_SERVER['DOCUMENT_ROOT'] . '\IA_HU_2026\pages\Layout\navbar.php'); ?>
 </body>
 </html>
