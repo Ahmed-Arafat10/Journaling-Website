@@ -76,7 +76,7 @@ If each page contains its own copy of the navbar, changing one link requires edi
 
 ```php
 <?php
-require_once __DIR__ . '/Layout/navbar.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Layout/navbar.php';
 ```
 
 `require_once` loads and executes the target file at that point in the request. Any HTML from the file becomes part of the output. The `once` suffix avoids loading the same file again during that request. If a required file cannot be loaded, execution fails instead of silently continuing without it.
@@ -92,16 +92,16 @@ An include does not send the browser to another page. It combines server-side co
 | Browser URL | `http://localhost/IA_HU_2026/pages/index.php` | Address requested over HTTP |
 | Root-relative URL | `/IA_HU_2026/pages/SignUp.php` | URL path from the current website's root |
 
-`..` means “parent directory.” `__DIR__` is PHP's directory of the file containing that expression. Joining it to a relative suffix creates a stable filesystem path:
+`..` means “parent directory.” `$_SERVER['DOCUMENT_ROOT']` is PHP's directory of the file containing that expression. Joining it to a relative suffix creates a stable filesystem path:
 
 ```php
 <?php
 // If this code is inside pages/index.php:
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/Layout/navbar.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
+require_once $_SERVER[' . '/Layout/navbar.php';
 ```
 
-The repository also uses `$_SERVER['DOCUMENT_ROOT']` to build paths. That value is the web server's configured document root. Hard-coding a project directory after it can break when a virtual host already points directly at the project. `__DIR__` keeps these includes relative to the source file instead.
+The repository also uses `$_SERVER['DOCUMENT_ROOT']` to build paths. That value is the web server's configured document root. Hard-coding a project directory after it can break when a virtual host already points directly at the project. `$_SERVER['DOCUMENT_ROOT']` keeps these includes relative to the source file instead.
 
 Use filesystem paths for `require_once`. Use URL paths for links and redirects. A Windows disk path is not a valid navigation destination for users of a website.
 
@@ -223,7 +223,7 @@ Keep namespace, class, and filename capitalization consistent. Composer's [autol
 <?php
 use App\DB;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
 
 $myDB = new DB();
 ```
@@ -290,7 +290,7 @@ Then, after loading Composer and successfully constructing the object, call:
 
 ```php
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
 
 $myDB = new \App\DB();
 echo $myDB->check() ? 'Database connection works.' : 'Check failed.';
