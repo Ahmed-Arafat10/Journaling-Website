@@ -272,20 +272,6 @@ The `use mysqli;` statement refers to the extension class in the global namespac
 
 The local credentials shown are copied from the repository. An incorrect database name or stopped database service can cause object construction to fail. Successful class autoloading and successful database connectivity are separate checks.
 
-### The `check()` method mentioned in the outline
-
-The outline mentions calling `check()`, but **the checked-in `DB` class has no such method**. Calling it as-is would cause an undefined-method error.
-
-For a classroom exercise, you could add the following method *inside* `DB`. This is a teaching extension, not existing repository code:
-
-```php
-public function check(): bool
-{
-    $result = $this->connection->query('SELECT 1 AS connection_ok');
-    return $result !== false;
-}
-```
-
 Then, after loading Composer and successfully constructing the object, call:
 
 ```php
@@ -293,7 +279,6 @@ Then, after loading Composer and successfully constructing the object, call:
 require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
 
 $myDB = new \App\DB();
-echo $myDB->check() ? 'Database connection works.' : 'Check failed.';
 ```
 
 This small read-only query checks whether the connection can execute SQL. With MySQLi exception reporting enabled, a connection or query failure throws an exception rather than necessarily returning `false`; the helper is not a complete error handler.
@@ -304,7 +289,6 @@ This small read-only query checks whether the connection can execute SQL. With M
 | --- | --- |
 | `Class "App\DB" not found` | Check the autoloader include, namespace, class name, and mapping |
 | Missing `vendor/autoload.php` | Run `composer install` from the project root |
-| Undefined method `check()` | The outline's example method is absent from the current class |
 | Navbar missing on another operating system | Check `Layout` versus `Layouts` and filename capitalization |
 | “Could not open input file” or failed include | Check whether you used a filesystem path in the correct context |
 
