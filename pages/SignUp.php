@@ -12,7 +12,7 @@ $auth->signUp();
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="\viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -23,48 +23,46 @@ $auth->signUp();
     <title>Sign Up</title>
 </head>
 
-<body>
+<body class="signup-page">
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/IA_HU_2026/pages/Layout/Navbar.php' ?>
 
-<form method="post">
+
+<form method="post" class="signup-form">
     <div class="Login-Card">
         <div class="screen-1">
 
             <div class="email">
-                <label for="username">Username</label>
+                <label for="usernameID">Username</label>
                 <div class="sec-2">
-                    <ion-icon name="mail-outline"></ion-icon>
-                    <input autoacomplete="" id="username" required type="text" name="username" placeholder="Ahmed Arafat"/>
+                    <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                    <input autocomplete="off" id="usernameID" required type="text" name="username" placeholder="Ahmed Arafat"/>
                 </div>
             </div>
-
             <div class="email">
-                <label for="email">Email</label>
+                <label for="emailID">Email</label>
                 <div class="sec-2">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input autocomplete="" type="email" required name="email" placeholder="ahmed@gmail.com"/>
+                    <input autocomplete="off" id="emailID" type="email" required name="email" placeholder="ahmed@gmail.com"/>
                 </div>
             </div>
 
             <div class="password">
-                <label for="password">Password</label>
+                <label for="passwordID">Password</label>
                 <div class="sec-2">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input class="pas" required type="password" name="password"/>
+                    <input class="pas" id="passwordID" required type="password" name="password"/>
                 </div>
             </div>
 
             <div class="password">
-                <label for="password">Confirm Password</label>
+                <label for="passwordConfirmationID">Confirm Password</label>
                 <div class="sec-2">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input class="pas" required type="password" name="confirm_password"/>
+                    <input class="pas" id="passwordConfirmationID" required type="password" name="confirm_password"/>
                 </div>
             </div>
-
             <button type="submit" name="signUpBtn" class="login">Sign Up</button>
-
             <div class="footer">
                 <a href="">
                     Log In
@@ -73,6 +71,7 @@ $auth->signUp();
             </div>
 
         </div>
+    </div>
 </form>
 
 </body>

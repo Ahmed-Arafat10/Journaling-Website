@@ -156,6 +156,73 @@ button {
 
 /*Login Card End*/
 
+/* Keep signup sizing independent of the shared page and input styles. */
+.signup-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #dde5f4;
+}
+
+.signup-page .signup-form {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+}
+
+.signup-page .Login-Card {
+    flex: 1;
+    min-width: 0;
+    height: auto;
+    overflow: visible;
+    padding: clamp(1rem, 4vw, 2rem);
+}
+
+.signup-page .screen-1 {
+    width: 100%;
+    max-width: 28rem;
+    min-width: 0;
+    padding: clamp(1rem, 4vw, 2rem);
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+.signup-page .sec-2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.signup-page .sec-2 ion-icon {
+    flex: 0 0 1rem;
+    margin: 0;
+}
+
+.signup-page .sec-2 input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    min-height: 2.75rem;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.signup-page .email:focus-within,
+.signup-page .password:focus-within {
+    outline: 2px solid #3e4684;
+    outline-offset: 2px;
+}
+
+.signup-page .footer {
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    padding-bottom: 0;
+}
+
 
 h1, h4, h3 {
     text-align: center;
