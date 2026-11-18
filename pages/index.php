@@ -1,6 +1,12 @@
 <?php
 
-//require_once '../vendor/autoload.php';
+require_once '../vendor/autoload.php';
+
+$auth = new \App\Authenticate();
+
+$auth->redirectIfNotAuth();
+
+$auth->logOut();
 
 //$myDB = new \App\DB();
 
@@ -21,6 +27,8 @@
     <title>Home Page</title>
 </head>
 <body>
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] . '\IA_HU_2026\pages\Layout\navbar.php'); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . '\IA_HU_2026\pages\Layout\navbar.php'); ?>
+
+<h1><?php echo "Welcome Back, " . $_SESSION['username'] ?></h1>
 </body>
 </html>

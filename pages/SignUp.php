@@ -5,6 +5,8 @@ require_once '../vendor/autoload.php';
 $auth = new \App\Authenticate();
 $auth->signUp();
 
+$auth->redirectIfAuth();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,8 +66,8 @@ $auth->signUp();
             </div>
             <button type="submit" name="signUpBtn" class="login">Sign Up</button>
             <div class="footer">
-                <a href="">
-                    Log In
+                <a href="SignIn.php">
+                    Sign In
                 </a>
                 <span>Forgot Password?</span>
             </div>
